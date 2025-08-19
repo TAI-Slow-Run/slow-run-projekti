@@ -1,0 +1,29 @@
+/* GLOBAL VARIABLES */
+:root {
+    /* FONTS */
+    --brand-font: "Libre Bodoni", serif;
+    --main-font: "Inter", sans-serif;
+
+    /* COLORS */
+    --brand-color: #05556F; /* header's bcg, btn Lähetä */
+    --accent-color: #849E8A; /* bcg's color section KEITA OLEMME, btn Liity mukaan, input font's color */
+    --second-color: #96906D; /* form's Haluatko tietaa color, stairs color */
+    --main-color: #ffffff; /* main background color*/
+    --main-font-color: #000000; /* main font's color*/
+    --footer-bcg: #f0f0f0; /* This color was NOT given in Moodle as one of the page's color, but I propose to use this one */
+
+    --just-color:  #003856;  /* This color was given in Moodle as one of the page's color, but I can't see right now where to use it */  
+  }
+
+  body{
+    font-family: var(--main-font);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: var(--main-color);
+    color: var(--second-color);
+  }
+  footer{
+    background-color: var(--footer-bcg);
+    color: var(--brand-color);
+  }
