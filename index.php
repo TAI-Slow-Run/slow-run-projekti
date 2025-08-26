@@ -7,17 +7,15 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/line.css">
 
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <h1>Juokse hitaasti niin voit paremmin</h1>
-    <footer>
-        <p>Made in TAI-TVT</p>
-    </footer>
+    <?php include __DIR__ . '/header.php'; ?>
+    <main>
+      <h1>Juokse hitaasti niin voit paremmin</h1>
+  </main>
+    <?php include __DIR__ . '/footer.php'; ?>
   </body>
 </html>
