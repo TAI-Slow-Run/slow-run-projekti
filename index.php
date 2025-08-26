@@ -14,7 +14,11 @@
   <body>
     <?php include __DIR__ . '/header.php'; ?>
     <main>
-      <h1>Juokse hitaasti niin voit paremmin</h1>
+      
+      <div class="hero">
+      <h1 class="hero-title">Juokse hitaasti niin voit paremmin</h1>
+      <button type="button" class="liity-btn">liity mukaan</button>
+      </div>
   </main>
     <?php include __DIR__ . '/footer.php'; ?>
   </body>
