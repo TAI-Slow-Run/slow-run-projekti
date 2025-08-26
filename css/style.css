@@ -67,6 +67,130 @@ body {
   text-underline-offset: 3px;
 }
 
+/* PRE-FOOTER (FORM + MAP) */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+.site-prefooter {
+  width: 100%;
+  background: var(--main-color);
+}
+
+.prefooter-grid {
+  display: grid;
+  grid-template-columns: 0.58fr 0.42fr;
+  min-height: 620px;
+}
+
+/* LEFT: form */
+.form-panel {
+  background: var(--second-color);
+  padding: 44px 40px;
+  display: flex;
+  flex-direction: column;
+}
+.form-title {
+  font-family: var(--brand-font);
+  font-weight: 700;
+  line-height: 1.15;
+  font-size: 28px;
+  color: var(--main-color);
+  margin: 8px 0 26px;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 420px;
+}
+.contact-form input,
+.contact-form textarea {
+  background: var(--main-color);
+  color: var(--accent-color);
+  border: none;
+  outline: none;
+  font-family: var(--main-font);
+  font-size: 14px;
+  padding: 12px 14px;
+}
+.contact-form textarea {
+  resize: none;
+  height: 148px;
+}
+.btn-submit {
+  align-self: flex-start;
+  margin-top: 8px;
+  background: var(--brand-color);
+  color: var(--main-color);
+  border: none;
+  padding: 12px 24px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.btn-submit:hover {
+  opacity: 0.9;
+}
+
+/* RIGHT: map */
+.map-panel {
+  position: relative;
+  overflow: hidden;
+}
+.map-panel img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.map-badge {
+  position: absolute;
+  left: 300px; /* центр відносно піна (290 + 40/2) */
+  top: 120px; /* вище піна */
+  transform: translateX(-50%); /* вирівнюємо по центру */
+  background: var(--main-color);
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.map-badge strong {
+  font-family: var(--brand-font);
+  font-size: 18px;
+  color: var(--brand-color);
+  font-weight: 700;
+}
+.map-badge span {
+  font-size: 12px;
+  color: var(--main-font-color);
+}
+
+.map-pin {
+  position: absolute;
+  left: 290px;
+  top: 220px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--brand-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  color: var(--main-color);
+  font-size: 28px;
+}
+
 /* ===== FOOTER ===== */
 .site-footer {
   background: var(--footer-bcg);
