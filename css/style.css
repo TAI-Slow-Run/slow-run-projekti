@@ -136,6 +136,15 @@ body {
 .btn-submit:hover {
   opacity: 0.9;
 }
+.liity-btn,
+.hero-title{
+  text-transform:uppercase;
+}
+.hero{
+  background-image: url("../images/main-banner.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 
 /* RIGHT: map */
 .map-panel {
