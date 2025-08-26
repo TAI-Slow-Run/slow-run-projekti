@@ -12,7 +12,7 @@
   --main-font-color: #000000; /* main font's color*/
   --footer-bcg: #f0f0f0; /* This color was NOT given in Moodle as one of the page's color, but I propose to use this one */
 
-  --just-color: #003856; /* This color was given in Moodle as one of the page's color, but I can't see right now where to use it */
+  --hover-color: #003856; /* This color was given in Moodle as one of the page's color, but I can't see right now where to use it */
 }
 
 body {
@@ -126,7 +126,7 @@ body {
 .btn-submit {
   align-self: flex-start;
   margin-top: 8px;
-  background: var(--brand-color);
+  background-color: var(--brand-color);
   color: var(--main-color);
   border: none;
   padding: 12px 24px;
@@ -134,7 +134,8 @@ body {
   cursor: pointer;
 }
 .btn-submit:hover {
-  opacity: 0.9;
+  /* opacity: 0.9; */
+  background-color: var(--hover-color);
 }
 .liity-btn,
 .hero-title{
