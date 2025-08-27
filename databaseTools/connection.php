@@ -17,8 +17,8 @@
  */
 
 $servername = "localhost";
-$username = "riku";
-$password = "root";
+$username = "riku"; // needs to change
+$password = "root"; // needs to change
 try {
     $connection = new PDO("mysql:host=$servername;dbname=$username", $username, $password);
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
