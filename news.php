@@ -41,6 +41,7 @@ $_SESSION["news"] = $news;
 <body>
   <?php include __DIR__ . '/header.php'; ?>
   <h1>Uutiset</h1>
+  <p>Some changes</p>
   <section class="section-wrapper" id="section-wrapper">
    <!-- This section fulfill by script in the end of the body -->
   </section>
