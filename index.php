@@ -19,7 +19,7 @@
       <h1 class="hero-title">Juokse hitaasti niin voit paremmin</h1>
       <button type="button" class="liity-btn">liity mukaan</button>
       </div>
-  </main>
+    </main>
     <?php include __DIR__ . '/footer.php'; ?>
   </body>
 </html>
