@@ -7,7 +7,7 @@
         toiminnastamme lisää?
       </h2>
       <!-- correct address required -->
-      <form id="contact-form" class="contact-form" action="/contact_submit.php" method="post" autocomplete="on">
+      <form id="contact-form" class="contact-form" method="post" autocomplete="on">
         <label class="visually-hidden" for="name">Nimesi</label>
         <input id="name" name="name" type="text" placeholder="Nimesi" required>
 
@@ -50,3 +50,4 @@
     </ul>
   </div>
 </footer>
+<script src = "contact_submit.js" type = "module"></script>
