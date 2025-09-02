@@ -26,6 +26,8 @@ body {
   padding: 0;
 }
 
+
+
 /* ===== HEADER ===== */
 .site-header {
   background-color: var(--brand-color);
@@ -45,6 +47,7 @@ body {
   text-decoration: none;
   letter-spacing: 0.04em;
 }
+
 .main-nav ul {
   display: flex;
   gap: 32px;
@@ -52,6 +55,16 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.main-nav ul.active {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 .main-nav .nav-link {
   font-family: var(--main-font);
   color: var(--main-color);
@@ -65,6 +78,28 @@ body {
   opacity: 1;
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 450px) {
+  .brand {
+    font-size: 15px;
+  }
+
+  .main-nav ul {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    
+  }
 }
 
 /* PRE-FOOTER (FORM + MAP) */
