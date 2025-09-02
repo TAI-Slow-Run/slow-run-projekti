@@ -3,10 +3,12 @@
   <div class="container">
     <a href="./" class="brand">SLOW RUN</a>
     <nav class="main-nav" aria-label="Päävalikko">
-      <ul>
+      <ul id = "list_menu">
         <li><a href="./news.php"    class="nav-link">UUTISET</a></li>
         <li><a href="./contact.php" class="nav-link">YHTEYS</a></li>
       </ul>
     </nav>
+    <i class="uil uil-bars hamburger" id="hamburger"></i>
   </div>
 </header>
+<script src = "header.js"></script>
