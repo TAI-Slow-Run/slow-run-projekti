@@ -27,6 +27,8 @@ $_SESSION["news"] = $news;
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/line.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/solid.css">
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap"
     rel="stylesheet" />
@@ -40,9 +42,9 @@ $_SESSION["news"] = $news;
 
 <body>
   <?php include __DIR__ . '/header.php'; ?>
-  <h1>Uutiset</h1>
-  <p>Some changes</p>
+
   <section class="section-wrapper" id="section-wrapper">
+  <h1 class="section-title">Uutiset</h1>
    <!-- This section fulfill by script in the end of the body -->
   </section>
   <?php include __DIR__ . '/footer.php'; ?>
@@ -62,6 +64,15 @@ $_SESSION["news"] = $news;
                 newsWrapper = document.createElement("div");
                 newsWrapper.classList.add("item-wrapper");
 
+                newsContentWrapper = document.createElement("div");
+                newsContentWrapper.classList.add("item-content");
+                  // element div-wrapper to orginize image and text in one line on laptop:
+                newsTextAndImageWrapper = document.createElement("div");
+                newsTextAndImageWrapper.classList.add("text-and-image-content");
+                // element with text colomn and button Show more... if needs
+                newsArticleWrapper = document.createElement("div");
+                newsArticleWrapper.classList.add("article-wrapper");
+                
                 // element h2 for news title:
                 newsTitleElement = document.createElement("h2");
                 newsTitleElement.classList.add("item-title");
@@ -89,7 +100,28 @@ $_SESSION["news"] = $news;
 
                 // define element section-wrapper as element where to append "children":
                 sectionWrapper = document.getElementById("section-wrapper");
-                sectionWrapper.append(newsWrapper, newsTitleElement, newsImageElement, newsDataElement, newsTextElement);
+                newsArticleWrapper.append(newsTextElement);
+                newsTextAndImageWrapper.append(newsImageElement, newsArticleWrapper);
+                newsContentWrapper.append(newsTitleElement, newsDataElement, newsTextAndImageWrapper);
+                newsWrapper.append(newsContentWrapper);
+                sectionWrapper.append(newsWrapper);
+
+                console.log("scrollHeight of the article is ", newsTextElement.scrollHeight);
+                console.log("clientHeight of the article is ", newsTextElement.clientHeight);
+                // Condition to show button Näytä lisää:
+                if (newsTextElement.scrollHeight > newsTextElement.clientHeight) {
+                  linkReadMoreElement = document.createElement("div");
+                  linkReadMoreElement.classList.add("see-more-wrapper");
+                  linkReadMoreBtn = document.createElement("button");
+                  linkReadMoreBtn.setAttribute("type", "button");
+                  linkReadMoreBtn.classList.add("see-more-btn");
+                  linkReadMoreBtn.innerText = "Näytä lisää";
+                  linkReadMoreArrow = document.createElement("i");
+                  linkReadMoreArrow.classList.add("uis");
+                  linkReadMoreArrow.classList.add("uis-angle-down");
+                  linkReadMoreElement.append(linkReadMoreBtn, linkReadMoreArrow);
+                  newsArticleWrapper.append(linkReadMoreElement);
+                }
 
         <?php
             }

@@ -17,7 +17,7 @@
  */
 
 $servername = "localhost";
-$username = "riku"; // needs to change
+$username = "slow_run"; // needs to change
 $password = "root"; // needs to change
 try {
     $connection = new PDO("mysql:host=$servername;dbname=$username", $username, $password);
