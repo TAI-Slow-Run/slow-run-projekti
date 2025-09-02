@@ -16,15 +16,21 @@
  * @author Riku Theodorou <athrikardo@gmail.com>
  */
 
-$servername = "localhost";
-$username = "riku"; // needs to change
-$password = "root"; // needs to change
+foreach(parse_ini_file(".env") as $key => $value) {
+    $_ENV[$key] = $value;
+}
+
+$servername = $_ENV["DB_HOST"];
+$username = $_ENV["DB_USERNAME"];
+$password = $_ENV["DB_PASSWORD"];
+$databasename = $_ENV["DB_NAME"];
+
+
 try {
-    $connection = new PDO("mysql:host=$servername;dbname=$username", $username, $password);
+    $connection = new PDO("mysql:host=$servername;dbname=$databasename", $username, $password);
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {
     echo "No connection with the database: " . $e->getMessage();
-    return;
 }
 
 /* --------------------Set error handler to the new project------------------------- */
