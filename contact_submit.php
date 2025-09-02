@@ -1,5 +1,5 @@
 <?php
-include("./databaseTools/connection.php");
+include("./databaseTools/connectionLibrary.php");
 $data = getData();
 
 if(anyNull(true, $data)) {
