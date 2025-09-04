@@ -12,9 +12,13 @@
   --main-font-color: #000000; /* main font's color*/
   --footer-bcg: #f0f0f0; /* This color was NOT given in Moodle as one of the page's color, but I propose to use this one */
 
-  --just-color: #003856; /* This color was given in Moodle as one of the page's color, but I can't see right now where to use it */
+  --hover-color: #003856; /* This color was given in Moodle as one of the page's color, but I can't see right now where to use it */
 }
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   font-family: var(--main-font);
   font-optical-sizing: auto;
@@ -22,8 +26,6 @@ body {
   font-style: normal;
   background-color: var(--main-color);
   color: var(--second-color);
-  margin: 0;
-  padding: 0;
 }
 
 /* ===== HEADER ===== */
@@ -126,7 +128,7 @@ body {
 .btn-submit {
   align-self: flex-start;
   margin-top: 8px;
-  background: var(--brand-color);
+  background-color: var(--brand-color);
   color: var(--main-color);
   border: none;
   padding: 12px 24px;
@@ -134,7 +136,17 @@ body {
   cursor: pointer;
 }
 .btn-submit:hover {
-  opacity: 0.9;
+  /* opacity: 0.9; */
+  background-color: var(--hover-color);
+}
+.liity-btn,
+.hero-title {
+  text-transform: uppercase;
+}
+.hero {
+  background-image: url("../images/main-banner.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 /* RIGHT: map */
@@ -233,3 +245,106 @@ body {
   padding-left: 40px;
   padding-right: 40px;
 }
+
+/* ===== NEWS PAGE ===== */
+/* .section-wrapper {
+  padding: 3rem;
+} */
+.section-title {
+  color: var(--brand-color);
+  text-transform: uppercase;
+  font-family: var(--brand-font);
+  font-size: 1.75rem;
+  padding: 3rem;
+}
+.item-wrapper {
+  background-color: var(--accent-color);
+  color: var(--main-color);
+}
+.item-wrapper:nth-child(odd) {
+  background-color: var(--footer-bcg);
+  color: var(--second-color);
+}
+.item-wrapper:nth-child(odd) .item-title,
+.item-wrapper:nth-child(odd) .item-date {
+  text-align: end;
+}
+.item-content {
+  padding: 3rem 3rem 4rem 3rem;
+}
+
+.item-title {
+  font-family: var(--brand-font);
+  text-transform: uppercase;
+  /* letter-spacing: 0.5px; */
+  word-spacing: 3px;
+  margin-bottom: 0.75rem;
+}
+.item-date {
+  margin-bottom: 0.6rem;
+}
+.item-text{
+  height: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}
+/* .item-text:hover{
+  overflow: visible;
+} */
+.item-text::first-line {
+  font-variant: small-caps;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.text-and-image-content{
+  display: flex;
+  gap: 1rem;
+}
+.item-wrapper:nth-child(odd) .text-and-image-content{
+  flex-direction: row-reverse;
+}
+
+.text-and-image-content p{
+  margin-bottom: 1rem;
+}
+.see-more-btn{
+  font-family: var(--main-font);
+  font-size: 1rem;
+  font-weight: 500;
+  background-color:transparent;
+  border: none;
+  color: var(--brand-color);
+  align-content: center;
+}
+.see-more-wrapper:hover{
+  color: var(--hover-color);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.see-more-btn:hover{
+  cursor: pointer;
+  color: var(--hover-color);
+}
+.article-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.see-more-wrapper{
+  display: flex;
+  width: fit-content;
+  justify-content: center;
+  gap: 0.2rem;
+}
+.see-more-wrapper i {
+  color: var(--brand-color);
+  font-weight: 500;
+  vertical-align: middle;
+}
+/* .item-wrapper:nth-child(even) .see-more-btn{
+  color: var(--footer-bcg);
+} */
+  /* .item-wrapper:nth-child(even) .see-more-btn:hover{
+    color: var(--second-color);
+  } */
