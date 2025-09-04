@@ -21,7 +21,7 @@
  * @author Riku Theodorou <athrikardo@gmail.com>
  */
 
-include("connection.php");
+include("connectionLibrary.php");
 
 try {
     $data = getData();

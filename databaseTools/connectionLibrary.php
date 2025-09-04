@@ -16,15 +16,20 @@
  * @author Riku Theodorou <athrikardo@gmail.com>
  */
 
-$servername = "localhost";
-$username = "24p_opettaja";
-$password = "1q4xBf3a)@DhHUna";
+foreach(parse_ini_file(".env") as $key => $value) {
+    $_ENV[$key] = $value;
+}
+
+$servername = $_ENV["DB_HOST"];
+$username = $_ENV["DB_USERNAME"];
+$password = $_ENV["DB_PASSWORD"];
+$databasename = $_ENV["DB_NAME"];
+
 try {
-    $connection = new PDO("mysql:host=$servername;dbname=$username", $username, $password);
+    $connection = new PDO("mysql:host=$servername;dbname=$databasename", $username, $password);
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {
     echo "No connection with the database: " . $e->getMessage();
-    return;
 }
 
 /* --------------------Set error handler to the new project------------------------- */
@@ -57,22 +62,22 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 ini_set('log_errors', 1);
-ini_set('error_log', 'logs/error_log.txt');  // Path to log file
+ini_set('error_log', './databaseTools/logs/error_log.txt');  // Path to log file
 
 /* ---------------------------------------------------------------------------------------- */
 
 //As an extra protection, whenever a table name is required as a user input we always checking for the name of the table
 //This can help to counter the problem of SQL Injection.
-$allowedTables = ["uses", "news"];
+$allowedTables = ["uses", "news", "administrators"];
 
 /**
  * Returns the last inserted ID of a specific table
  * @param string $tableName The table's name
  * @return int The last inserted id
  */
-function getLastID(string $tableName) {
+function getLastID(string $tableName, $idFieldName) {
     global $connection;
-    $sql_statement = "SELECT MAX(id) AS last_id FROM $tableName";
+    $sql_statement = "SELECT MAX($idFieldName) AS last_id FROM $tableName";
     $kysely = $connection->prepare($sql_statement);
     $kysely->execute();
     $results = $kysely->fetch();
