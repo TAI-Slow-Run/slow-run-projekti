@@ -24,7 +24,7 @@
  * @author Riku Theodorou <athrikardo@gmail.com>
  */
 
-include("connection.php");
+include("connectionLibrary.php");
 $data = getData();
 $main_sql_statement = $data[0] ?? null; //string
 $username = "Riku"; // string

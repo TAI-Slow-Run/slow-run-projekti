@@ -20,7 +20,7 @@
  * @author Riku Theodorou <athrikardo@gmail.com>
  */
 
-include("connection.php");
+include("connectionLibrary.php");
 
 $data = getData();
 
