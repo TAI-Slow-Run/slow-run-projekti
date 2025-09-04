@@ -112,6 +112,7 @@ $_SESSION["news"] = $news;
                 if (newsTextElement.scrollHeight > newsTextElement.clientHeight) {
                   linkReadMoreElement = document.createElement("div");
                   linkReadMoreElement.classList.add("see-more-wrapper");
+                  linkReadMoreElement.addEventListener("click", showConsoleLog);
                   linkReadMoreBtn = document.createElement("button");
                   linkReadMoreBtn.setAttribute("type", "button");
                   linkReadMoreBtn.classList.add("see-more-btn");
@@ -121,6 +122,10 @@ $_SESSION["news"] = $news;
                   linkReadMoreArrow.classList.add("uis-angle-down");
                   linkReadMoreElement.append(linkReadMoreBtn, linkReadMoreArrow);
                   newsArticleWrapper.append(linkReadMoreElement);
+                }
+
+                function showConsoleLog() {
+                  console.log("Show message when click on see-more-wrapper");
                 }
 
         <?php
