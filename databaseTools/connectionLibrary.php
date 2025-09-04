@@ -25,7 +25,6 @@ $username = $_ENV["DB_USERNAME"];
 $password = $_ENV["DB_PASSWORD"];
 $databasename = $_ENV["DB_NAME"];
 
-
 try {
     $connection = new PDO("mysql:host=$servername;dbname=$databasename", $username, $password);
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
