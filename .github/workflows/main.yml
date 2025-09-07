@@ -14,3 +14,4 @@ jobs:
         server: 194.197.245.5
         username: 24p_opettaja
         password: ${{ secrets.ftp_password }}
+        server-dir: slow-run-projekti/
