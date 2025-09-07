@@ -18,6 +18,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none; /* Added By Riku*/
 }
 body {
   font-family: var(--main-font);
@@ -53,12 +54,12 @@ body {
 .main-nav ul {
   display: flex;
   gap: 32px;
-  list-style: none;
+  /* list-style: none; * /* Commented and added to the * tab -- By Riku*/
   margin: 0;
   padding: 0;
 }
 
-.main-nav ul.active {
+.main-nav ul.active { /*Added by Riku*/
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -67,7 +68,7 @@ body {
   padding: 0;
 }
 
-.main-nav .nav-link {
+.main-nav .nav-link, .off-screen-menu .nav-link{ /* .off-screen-menu .nav-link Added by Riku*/
   font-family: var(--main-font);
   color: var(--main-color);
   text-decoration: none;
@@ -82,14 +83,35 @@ body {
   text-underline-offset: 3px;
 }
 
-.hamburger {
+.hamburger { /*Added by Riku*/
   display: none;
   font-size: 24px;
   color: white;
   cursor: pointer;
 }
 
-@media screen and (max-width: 450px) {
+.off-screen-menu { /* Added by Riku*/
+    background-color: var(--brand-color);
+    height: 10vh;
+    width: 10vh;
+    max-width: 450px;
+    position: fixed;
+    top: 0;
+    margin-top: 53px;
+    right: -450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1rem;
+    transition:  .3s ease;
+}
+.off-screen-menu.active { /* Added by Riku*/
+    right: -1px;
+}
+
+@media screen and (max-width: 450px) { /*Added by Riku*/
   .brand {
     font-size: 15px;
   }
@@ -100,7 +122,6 @@ body {
 
   .hamburger {
     display: block;
-    
   }
 }
 
