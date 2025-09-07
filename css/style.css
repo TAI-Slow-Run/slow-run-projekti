@@ -284,14 +284,10 @@ body {
   margin-bottom: 0.6rem;
 }
 .item-text{
-  height: 260px;
   overflow: hidden;
-  text-overflow: ellipsis;
-  
+  text-overflow: ellipsis;  
 }
-/* .item-text:hover{
-  overflow: visible;
-} */
+
 .item-text::first-line {
   font-variant: small-caps;
   font-size: 1.2rem;
