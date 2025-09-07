@@ -68,7 +68,7 @@ body {
   padding: 0;
 }
 
-.main-nav .nav-link, .off-screen-menu .nav-link{ /* .off-screen-menu .nav-link Added by Riku*/
+.main-nav .nav-link, .off-screen-menu .nav-link{ /* .off-screen-menu .nav-link, Added by Riku*/
   font-family: var(--main-font);
   color: var(--main-color);
   text-decoration: none;
@@ -77,7 +77,7 @@ body {
   text-transform: uppercase;
   opacity: 0.9;
 }
-.main-nav .nav-link:hover {
+.main-nav .nav-link:hover, .off-screen-menu .nav-link:hover { /* .off-screen-menu .nav-link:hover, Added by Riku*/
   opacity: 1;
   text-decoration: underline;
   text-underline-offset: 3px;
