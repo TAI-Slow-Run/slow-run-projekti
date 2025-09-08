@@ -18,6 +18,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none; /* Added By Riku*/
 }
 body {
   font-family: var(--main-font);
@@ -27,6 +28,8 @@ body {
   background-color: var(--main-color);
   color: var(--second-color);
 }
+
+
 
 /* ===== HEADER ===== */
 .site-header {
@@ -47,14 +50,25 @@ body {
   text-decoration: none;
   letter-spacing: 0.04em;
 }
+
 .main-nav ul {
   display: flex;
   gap: 32px;
+  /* list-style: none; * /* Commented and added to the * tab -- By Riku*/
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav ul.active { /*Added by Riku*/
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.main-nav .nav-link {
+
+.main-nav .nav-link, .off-screen-menu .nav-link{ /* .off-screen-menu .nav-link, Added by Riku*/
   font-family: var(--main-font);
   color: var(--main-color);
   text-decoration: none;
@@ -63,10 +77,52 @@ body {
   text-transform: uppercase;
   opacity: 0.9;
 }
-.main-nav .nav-link:hover {
+.main-nav .nav-link:hover, .off-screen-menu .nav-link:hover { /* .off-screen-menu .nav-link:hover, Added by Riku*/
   opacity: 1;
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+.hamburger { /*Added by Riku*/
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+.off-screen-menu { /* Added by Riku*/
+    background-color: var(--brand-color);
+    height: 10vh;
+    width: 10vh;
+    max-width: 450px;
+    position: fixed;
+    top: 0;
+    margin-top: 53px;
+    right: -450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1rem;
+    transition:  .3s ease;
+}
+.off-screen-menu.active { /* Added by Riku*/
+    right: -1px;
+}
+
+@media screen and (max-width: 450px) { /*Added by Riku*/
+  .brand {
+    font-size: 15px;
+  }
+
+  .main-nav ul {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
 }
 
 /* PRE-FOOTER (FORM + MAP) */
