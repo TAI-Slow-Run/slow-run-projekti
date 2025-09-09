@@ -26,7 +26,7 @@
 
     <!-- RIGHT: MAP -->
     <section class="map-panel" aria-label="Map to Slow Run ry">
-      <img src="./images/image1.png" alt="Kartta: Slow Run ry sijainti Lappeenrannassa">
+      <img class = "map" src="./images/image1.png" alt="Kartta: Slow Run ry sijainti Lappeenrannassa">
 
       <div class="map-badge">
         <strong>SLOW RUN RY</strong>
@@ -42,7 +42,7 @@
 </footer>
 
 <footer class="site-footer">
-  <div class="container">
+  <div class="container container-footer">
     <p class="made-in">Made in TAI–TVT</p>
     <ul class="social">
       <li><a href="#" aria-label="Facebook"><i class="uil uil-facebook"></i></a></li>
