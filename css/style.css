@@ -123,6 +123,15 @@ body {
   .hamburger {
     display: block;
   }
+
+  /* PAGE NEWS */
+  .section-title{
+    font-size: 1.25rem;
+  }
+  .item-title{
+    font-size: 1rem;
+    font-weight: 500;
+  }
 }
 
 /* PRE-FOOTER (FORM + MAP) */
@@ -400,3 +409,33 @@ body {
   /* .item-wrapper:nth-child(even) .see-more-btn:hover{
     color: var(--second-color);
   } */
+
+  @media screen and (max-width: 450px) { 
+  
+    /* PAGE NEWS */
+    .section-title{
+      font-size: 1.25rem;
+      padding: 2rem;
+    }
+    .item-title{
+      font-size: 0.9rem;
+      font-weight: 400;
+    }
+    .item-date,
+    .item-text,
+    .see-more-btn {
+      font-size: 0.8rem;
+    }
+    .item-text::first-line {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+    .text-and-image-content,
+    .item-wrapper:nth-child(odd) .text-and-image-content {
+      flex-direction: column;
+    }
+    .item-img{
+      height: auto;
+      width: 100%;
+    }
+  }
