@@ -47,3 +47,24 @@
     }
   }
 }
+
+@media screen and (max-width: 450px) {
+  .brand {
+    /*Added by Riku*/
+    font-size: 15px;
+  }
+
+  .main-nav ul {
+    /*Added by Riku*/
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hero-media {
+    width: 100%;       /* image takes full width of its container */
+    height: auto;      /* maintain aspect ratio */
+  }
+}
