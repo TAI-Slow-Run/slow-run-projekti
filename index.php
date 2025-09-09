@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/line.css">
 
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/responsive.css">
   </head>
   <body>
     <?php include __DIR__ . '/header.php'; ?>
