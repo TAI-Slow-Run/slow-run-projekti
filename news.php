@@ -33,6 +33,10 @@ $_SESSION["news"] = $news;
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap"
     rel="stylesheet" />
 
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="stylesheet" href="./css/responsive.css">
   <script>
@@ -45,8 +49,24 @@ $_SESSION["news"] = $news;
   <?php include __DIR__ . '/header.php'; ?>
 
   <section class="section-wrapper" id="section-wrapper">
-    <h1 class="section-title">Uutiset</h1>
-    <!-- This section fulfill by script in the end of the body -->
+    <div class="title-wrapper">
+      <h1 class="section-title animate__animated animate__fadeInLeft">Uutiset</h1>
+      <div class="bars-container">
+        <div class="bars-container">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+
+      <!-- This section fulfill by script in the end of the body -->
   </section>
   <?php include __DIR__ . '/footer.php'; ?>
 
@@ -110,7 +130,7 @@ $_SESSION["news"] = $news;
 
         // console.log("scrollHeight of the article is ", newsTextElement.scrollHeight);
         // console.log("clientHeight of the article is ", newsTextElement.clientHeight);
-        
+
         // Condition to show button Näytä lisää:
         if (newsTextElement.scrollHeight > newsTextElement.clientHeight) {
           linkReadMoreElement = document.createElement("div");
