@@ -34,6 +34,7 @@ $_SESSION["news"] = $news;
     rel="stylesheet" />
 
   <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/responsive.css">
   <script>
     // script for printing the connection status in console:
     console.log("<?php echo $connection_status; ?>")
