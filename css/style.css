@@ -57,16 +57,6 @@ body {
   padding: 0;
 }
 
-.main-nav ul.active {
-  /*Added by Riku*/
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
 .main-nav .nav-link,
 .off-screen-menu .nav-link {
   /* .off-screen-menu .nav-link, Added by Riku*/
@@ -85,6 +75,11 @@ body {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+.off-screen-menu ul{ /* Added by Riku*/
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
 .hamburger {
   /*Added by Riku*/
@@ -94,44 +89,27 @@ body {
   cursor: pointer;
 }
 
-.off-screen-menu {
-  /* Added by Riku*/
-  background-color: var(--brand-color);
-  height: 10vh;
-  width: 10vh;
-  max-width: 450px;
-  position: fixed;
-  top: 0;
-  margin-top: 53px;
-  right: -450px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 1rem;
-  transition: 0.3s ease;
+.off-screen-menu { /* Added by Riku*/
+    background-color: var(--brand-color);
+    height: 10vh;
+    width: 20vh;
+    max-width: 450px;
+    position: fixed;
+    top: 0;
+    margin-top: 53px;
+    right: -450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 1rem;
+    transition:  .3s ease;
 }
 .off-screen-menu.active {
   /* Added by Riku*/
   right: -1px;
 }
-
-@media screen and (max-width: 450px) {
-  /*Added by Riku*/
-  .brand {
-    font-size: 15px;
-  }
-
-  .main-nav ul {
-    display: none;
-  }
-
-  .hamburger {
-    display: block;
-  }
-}
-
 /* PRE-FOOTER (FORM + MAP) */
 .visually-hidden {
   position: absolute !important;
@@ -463,4 +441,63 @@ body {
   color: var(--brand-color);
   font-weight: 500;
   vertical-align: middle;
+}
+/* .item-wrapper:nth-child(even) .see-more-btn{
+  color: var(--footer-bcg);
+} */
+  /* .item-wrapper:nth-child(even) .see-more-btn:hover{
+    color: var(--second-color);
+  } */
+
+  @media screen and (max-width: 450px) { 
+  
+    /* PAGE NEWS */
+    .section-title{
+      font-size: 1.25rem;
+      padding: 2rem;
+    }
+    .item-title{
+      font-size: 0.9rem;
+      font-weight: 400;
+    }
+    .item-date,
+    .item-text,
+    .see-more-btn {
+      font-size: 0.8rem;
+    }
+    .item-text::first-line {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+    .text-and-image-content,
+    .item-wrapper:nth-child(odd) .text-and-image-content {
+      flex-direction: column;
+    }
+    .item-img{
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+  .brand { /*Added by Riku*/
+    font-size: 15px;
+  }
+
+  .main-nav ul { /*Added by Riku*/
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* PAGE NEWS */
+  .section-title{
+    font-size: 1.25rem;
+  }
+  .item-title{
+    font-size: 1rem;
+    font-weight: 500;
+  }
 }
