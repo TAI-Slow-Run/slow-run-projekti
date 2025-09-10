@@ -90,7 +90,19 @@
 
   <!-- MIKSI MUKAAN -->
 <section class="stairs">
-  <h2 class="stairs__title">MIKSI MUKAAN?</h2>
+  <div class="stairs__wrapper">
+    <div class="stairs__diagram" aria-hidden="true">
+      <div class="step step--4"><span class="step__label">Pitkäikäisyys</span></div>
+      <div class="step step--3"><span class="step__label">Fyysisyys</span></div>
+      <div class="step step--2"><span class="step__label">Terve mieli</span></div>
+      <div class="step step--1"><span class="step__label">Yhteisöllisyys</span></div>
+    </div>
+
+    <div class="stairs__text">
+      <h2 class="stairs__title">MIKSI MUKAAN?</h2>
+      <p class="stairs__subtitle">Arvomme näet alla:</p>
+    </div>
+  </div>
 </section>
     </main>
     <?php include __DIR__ . '/footer.php'; ?>
