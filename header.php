@@ -1,7 +1,7 @@
 <?php // header.php ?>
 <header class="site-header">
   <div class="container">
-    <a href="./" class="brand">SLOW RUN</a>
+    <a href="./" class="brand">slow run</a>
     <nav class="main-nav" aria-label="Päävalikko">
       <ul id = "list_menu">
         <li><a href="./news.php"    class="nav-link">UUTISET</a></li>
