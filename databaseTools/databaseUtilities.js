@@ -75,10 +75,16 @@ export async function sendDataToServer(event = null, phpFileName, dataArray = nu
     if(event != null) {
         event.preventDefault(); // disable the default behaviour of the submit button
     }
+
+    if(!(event instanceof HTMLFormElement)) {
+        event = event.target.form;
+    } else {
+        event = event.target;
+    }
     
     try {
         if(dataArray == null) {
-            data = new FormData(event.target)// data returned from the <form>...</form>
+            data = new FormData(event)// data returned from the <form>...</form>
             databaseData = await getResponse(phpFileName, data, false); //Data from the database. The function will pause here until data is returned from the server
         } else {
             databaseData = await getResponse(phpFileName, dataArray, true); //Data from the database. The function will pause here until data is returned from the server
