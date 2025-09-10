@@ -76,11 +76,13 @@ export async function sendDataToServer(event = null, phpFileName, dataArray = nu
         event.preventDefault(); // disable the default behaviour of the submit button
     }
 
+    /*New addition*/
     if(!(event instanceof HTMLFormElement)) {
         event = event.target.form;
     } else {
         event = event.target;
     }
+    /* ---------------------------------------------------new addition-end */
     
     try {
         if(dataArray == null) {
