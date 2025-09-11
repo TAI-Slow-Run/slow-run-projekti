@@ -1,4 +1,4 @@
-import * as dUtil from "./databaseTools/databaseUtilities.js";
+import * as dUtil from "../databaseTools/databaseUtilities.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("contact-form").addEventListener("submit", async (e) => {

@@ -50,4 +50,4 @@
     </ul>
   </div>
 </footer>
-<script src = "contact_submit.js" type = "module"></script>
+<script src = "./js_php/contact_submit.js" type = "module"></script>

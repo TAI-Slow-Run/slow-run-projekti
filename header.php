@@ -19,4 +19,4 @@
     <i class="uil uil-bars hamburger" id="hamburger"></i>
   </div>
 </header>
-<script src = "header.js"></script>
+<script src = "./js_php/header.js"></script>
