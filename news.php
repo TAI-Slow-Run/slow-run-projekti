@@ -50,7 +50,7 @@ $_SESSION["news"] = $news;
 
   <section class="section-wrapper" id="section-wrapper">
     <div class="title-wrapper">
-      <h1 class="section-title animate__animated animate__fadeInLeft">Uutiset</h1>
+      <h1 class="section-title main-title animate__animated animate__fadeInLeft">Uutiset</h1>
       <div class="bars-container">
         <div class="bars-container">
           <div class="bar"></div>
