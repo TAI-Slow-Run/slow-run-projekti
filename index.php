@@ -10,6 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/line.css">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/thinline.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet" />
 
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="stylesheet" href="./css/responsive.css">
@@ -20,11 +23,10 @@
   <main>
     <!-- HERO -->
     <section class="hero">
-      <img class="hero-media" src="./images/main-banner.jpg" alt="Slow running on ice" />
-
+      <!-- <img class="hero-media" src="./images/main-banner.jpg" alt="Slow running on ice" /> -->
       <div class="hero__inner">
-        <h1 class="hero-title">Juokse hitaasti<br>niin voit paremmin</h1>
-        <a href="#join" class="liity-btn">Liity mukaan</a>
+        <h1 class="hero-title">Juokse hitaasti<br>niin voit paremmin.</h1>
+        <a href="#join" class="liity-btn">Liity mukaan</a><P></P>
       </div>
     </section>
     <!-- MISTÄ ON KYSE -->
@@ -67,6 +69,7 @@
 
           <article class="feature">
             <i class="uil uil-analytics feature__icon" aria-hidden="true"></i>
+            <!-- <i class="uit uit-analytics feature__icon" aria-hidden="true"></i> -->
             <h3 class="feature__title">Suorituskyky</h3>
             <p class="feature__text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
