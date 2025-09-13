@@ -154,6 +154,33 @@
     display: flex;
     flex-direction: column-reverse;
   }
+
+  .map-panel { /* Riku*/
+    position: relative; /* Makes the container the “anchor” for its children,
+    so elements positioned with top, left, etc., will stay relative to this container. */
+    overflow: hidden;   /* Hides any part of the image that sticks outside the container. */
+  }
+
+  .map-panel .map { /* Riku*/
+    width: 100%; /* makes the image as wide as its parent container */
+    height: 400px; /* needs a height so the image has a space to fill. Without a set height, 
+    the container might collapse to the image’s natural height, or to 0 if the image hasn’t loaded yet.
+    Works with object-fit.*/
+    object-fit: cover; /* makes the image fill the container entirely, cropping as needed. */
+    object-position: top left; /* controls which part of the image is visible inside its container when using object-fit. */
+  }
+
+  .map-badge { /* Riku*/
+    /*Badge positioning*/
+    left: 200px;
+    top: 30px;
+  }
+
+  .map-pin { /* Riku*/
+    /*pin positioning*/
+    left: 200px;
+    top: 130px;
+  }
 }
 
 /* Contact page */
