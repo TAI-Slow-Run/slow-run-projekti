@@ -80,14 +80,16 @@ export async function sendDataToServer(event = null, phpFileName, dataArray = nu
     /*New addition*/
     if(!(event.target instanceof HTMLFormElement)) {
         form = event.target.form;
+        console.log("poof1");
     } else {
         form = event.target;
+        console.log("poof2");
     }
     /* ---------------------------------------------------new addition-end */
     
     try {
         if(dataArray == null) {
-            data = new FormData(form);// data returned from the <form>...</form>
+            data = new FormData(event);// data returned from the <form>...</form>
             databaseData = await getResponse(phpFileName, data, false); //Data from the database. The function will pause here until data is returned from the server
         } else {
             databaseData = await getResponse(phpFileName, dataArray, true); //Data from the database. The function will pause here until data is returned from the server
