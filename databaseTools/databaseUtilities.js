@@ -80,10 +80,8 @@ export async function sendDataToServer(event = null, phpFileName, dataArray = nu
     /*New addition*/
     if(!(event.target instanceof HTMLFormElement)) {
         form = event.target.form;
-        console.log("poof1");
     } else {
         form = event.target;
-        console.log("poof2");
     }
     /* ---------------------------------------------------new addition-end */
     
