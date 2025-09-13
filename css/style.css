@@ -89,7 +89,7 @@ body {
   /* Added by Riku*/
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
 .hamburger {
