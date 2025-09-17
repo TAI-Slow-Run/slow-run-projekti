@@ -746,3 +746,47 @@ main {
 .site-footer {
   margin-top: auto;
 }
+
+/* Admin staff */
+
+/* Login page */
+.login-container{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem auto;
+}
+.login-form{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.login-form input {
+  background-color: var(--accent-color);
+  border: none;
+  outline: none;
+  font-family: var(--main-font);
+  font-size: 14px;
+  padding: 12px 14px;
+  width: 100%;
+}
+
+.login-form input::placeholder {
+  color: var(--brand-color);
+}
+
+.login-submit {
+  margin-top: 8px;
+  background-color: var(--brand-color);
+  color: var(--main-color);
+  border-radius: 0.3rem;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.login-submit:hover {
+  background-color: var(--hover-color);
+}
