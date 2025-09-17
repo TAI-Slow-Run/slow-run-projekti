@@ -155,63 +155,68 @@
     flex-direction: column-reverse;
   }
 
-  .map-panel { /* Riku*/
-    position: relative; /* Makes the container the “anchor” for its children,
-    so elements positioned with top, left, etc., will stay relative to this container. */
-    overflow: hidden;   /* Hides any part of the image that sticks outside the container. */
+  /* Map */
+  .map-panel {
+    min-height: 360px;
   }
 
-  .map-panel .map { /* Riku*/
-    width: 100%; /* makes the image as wide as its parent container */
-    height: 400px; /* needs a height so the image has a space to fill. Without a set height, 
-    the container might collapse to the image’s natural height, or to 0 if the image hasn’t loaded yet.
-    Works with object-fit.*/
-    object-fit: cover; /* makes the image fill the container entirely, cropping as needed. */
-    object-position: top left; /* controls which part of the image is visible inside its container when using object-fit. */
+  .map-panel iframe {
+    height: 360px;
   }
 
-  .map-badge { /* Riku*/
-    /*Badge positioning*/
-    left: 200px;
-    top: 30px;
+  .map-badge {
+    left: 65%;
+    top: 13%;
+    transform: translate(-50%, -50%);
+    padding: 6px 10px;
+    border-radius: 4px;
+  }
+  .map-badge strong {
+    font-size: 12px;
+  }
+  .map-badge span {
+    font-size: 8px;
   }
 
-  .map-pin { /* Riku*/
-    /*pin positioning*/
-    left: 200px;
-    top: 130px;
-  }
-}
-
-/* Contact page */
-@media (max-width: 768px) {
-  .contact-page {
-    padding: 100px 16px 40px;
-  }
-
-  .contact-form--page {
-    padding: 20px;
-    gap: 14px;
-  }
-
-  .contact-form--page input,
-  .contact-form--page textarea {
+  .map-pin {
+    left: 68%;
+    top: 25%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
     font-size: 14px;
   }
 
-  .contact-form--page .btn-submit {
-    font-size: 14px;
-    padding: 10px;
-  }
-}
+  /* Contact page */
+  @media (max-width: 768px) {
+    .contact-page {
+      padding: 100px 16px 40px;
+    }
 
-@media (max-width: 480px) {
-  .contact-page {
-    padding: 80px 12px 30px;
+    .contact-form--page {
+      padding: 20px;
+      gap: 14px;
+    }
+
+    .contact-form--page input,
+    .contact-form--page textarea {
+      font-size: 14px;
+    }
+
+    .contact-form--page .btn-submit {
+      font-size: 14px;
+      padding: 10px;
+    }
   }
 
-  .contact-form--page {
-    padding: 16px;
-    gap: 12px;
+  @media (max-width: 480px) {
+    .contact-page {
+      padding: 80px 12px 30px;
+    }
+
+    .contact-form--page {
+      padding: 16px;
+      gap: 12px;
+    }
   }
 }
