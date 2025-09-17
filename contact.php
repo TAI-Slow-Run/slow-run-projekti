@@ -24,6 +24,8 @@
 <main class="contact-page">
   <section class="contact-section">
     <div class="container">
+
+      <h2 class="section-title">Ota yhteyttä meihin</h2>
       <form id="contact-form" class="contact-form contact-form--page" method="post" autocomplete="on">
         <label class="visually-hidden" for="name">Nimesi</label>
         <input id="name" name="name" type="text" placeholder="Nimesi" required>
@@ -44,7 +46,7 @@
 </main>
 
 <?php 
-  include 'footer-bottom.php'; 
+  include 'footer.php'; 
 ?>
 
 </body>
