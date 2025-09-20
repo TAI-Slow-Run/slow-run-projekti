@@ -420,7 +420,7 @@ body {
   color: var(--accent-color);
 }
 .btn-submit,
-.upload-to-database-button {
+.admin-btn {
   align-self: flex-start;
   margin-top: 8px;
   background-color: var(--brand-color);
@@ -433,7 +433,7 @@ body {
   transition: background-color 0.2s ease;
 }
 .btn-submit:hover,
-.upload-to-database-button:hover {
+.admin-btn:hover {
   /* opacity: 0.9; */
   background-color: var(--hover-color);
 }
@@ -804,6 +804,10 @@ main {
 }
 
 /* Admin menu: Add a new article to the DB */
+.top-admin-btn{
+  align-self: flex-end;
+  margin-right: 10%;
+}
 .admin-container {
   width: 90%;
   display: flex;
