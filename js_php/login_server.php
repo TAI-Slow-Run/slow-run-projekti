@@ -24,6 +24,9 @@ try {
     !password_verify($password, $result["hashed_password"])) {
         throw new PDOException("Wrong credentials");
     } else {
+        ini_set('session.cookie_lifetime', 0); // Cookie dies when browser closes
+        session_start();
+        $_SESSION["id"] = $result["id"];
         header("Content-Type: application/json");
         echo json_encode(["success" => "ok"]);
     }
