@@ -1,17 +1,34 @@
 <?php
 session_start();
+
 include_once "sql_query.php";
+
 if (!isset($_SESSION['id'])) {
     header("Location: login.php");
     exit();
 }
 
-// $unread_messages = get_unread_messages();
-// $all_messages = get_all_messages();
+//When page only downloaded, only unread messages should be shown:
+if (!isset($_GET['filter'])) {
+    $filter = "unread";
+} else {
+    $filter = $_GET['filter'] === 'all' ? 'all' : 'unread';
+    $_SESSION['filter'] = $filter;
+}
 
-// $_SESSION["unread_messages"] = $unread_messages;
-// $_SESSION["all_messages"] = $all_messages;
+if ($filter === "unread") {
+    $messages = get_unread_messages();
+    $_SESSION["messages"] = $messages;
+} else {
+    $messages = get_all_messages();
+    $_SESSION["messages"] = $messages;
+}
 
+// echo "<pre>";
+// print_r($_SESSION);
+// echo "</pre>";
+unset($_SESSION["messages"]);
+unset($_SESSION["filter"]);
 ?>
 
 <!DOCTYPE html>
@@ -39,18 +56,85 @@ if (!isset($_SESSION['id'])) {
 
 
     <section class="admin-container">
-        <div class="toggle-btns">
-            <button class="message-toggle-item active-toggle" id="unread-toggle">Lukemattomat viestit</button>
-            <button class="message-toggle-item" id="all-toggle">Kaikki viestit</button>
-        </div>
+        <form action="" method="get" class="toggle-btns" id="toggle">
+            <button type="submit" name="filter" value="unread" class="message-toggle-item" id="unread-toggle">Lukemattomat viestit</button>
+            <button type="submit" name="filter" value="all" class="message-toggle-item" id="all-toggle">Kaikki viestit</button>
+        </form>
+
         <h1 class="admin-container-title" id="admin-container-title">Toiminto: Näe vain lukemattomat viestit</h1>
+        <p></p>
+        <p class="messages-amount" id="messages-amount"></p>
 
+        <!-- This section fulfill by script in the end of the body -->
+        <form method="post" id="admin-messages" class="add-form" enctype="multipart/form-data">
 
-        <!-- <form method="post" id="admin-add-article" class="add-form" enctype="multipart/form-data" action="upload-to-database.php">
-
-        </form> -->
+        </form>
 
     </section>
+
+    <script>
+        amountMessagesElement = document.getElementById("messages-amount");
+        // Behavior of toggle-buttons to show either all messages or only unread ones:
+        // The title text also changes depending on the selected option
+        <?php
+        $amountMessages = sizeof($messages);
+        if ($filter === "all") {
+        ?>
+            amountMessagesElement.textContent = `Tietokannassa on <?php echo $amountMessages;?> viestiä`;
+            document.getElementById("all-toggle").classList.add("active-toggle");
+            document.getElementById("admin-container-title").textContent = "Toiminto: Näe kaikki viestit";
+        <?php
+        } else {
+        ?>
+            amountMessagesElement.textContent = `Tietokannassa on <?php echo $amountMessages;?> lukematonta viestiä`;
+            document.getElementById("unread-toggle").classList.add("active-toggle");
+            document.getElementById("admin-container-title").textContent = "Toiminto: Näe vain lukemattomat viestit";
+        <?php
+        }
+        //Scrip for making HTML markup inside POST-form:
+            foreach ($messages as $message) {
+                ?>
+                itemWrapper = document.createElement("div");
+                itemWrapper.classList.add("item-wrapper");
+
+                topWrapper = document.createElement("div");
+                topWrapper.classList.add("top-wrapper");
+
+                dateField = document.createElement("p");
+                dateField.classList.add("data-field");
+                dateField.textContent = "<?php echo $message["message_date"];?>";
+
+                nameField = document.createElement("p");
+                nameField.classList.add("data-field");
+                nameField.textContent = "<?php echo $message["name"];?>";
+
+                emailField = document.createElement("p");
+                emailField.classList.add("data-field");
+                emailField.textContent = "<?php echo $message["email"];?>";
+
+                cityField = document.createElement("p");
+                cityField.classList.add("data-field");
+                cityField.textContent = "<?php echo $message["city"];?>";
+
+                topWrapper.appendChild(dateField);
+                topWrapper.appendChild(nameField);
+                topWrapper.appendChild(emailField);
+                topWrapper.appendChild(cityField);
+                itemWrapper.appendChild(topWrapper);
+
+                bottomWrapper = document.createElement("p");
+                bottomWrapper.classList.add("bottom-wrapper");
+                bottomWrapper.id = "<?php echo $message["message_id"];?>";
+                bottomWrapper.textContent = "<?php echo $message["message"];?>";
+                itemWrapper.appendChild(bottomWrapper);
+
+                document.getElementById("admin-messages").appendChild(itemWrapper);
+                <?php
+            }
+        ?>
+        
+
+    </script>
 
     <script src="./js_php/admin-menu-read-message.js" type="module"></script>
 

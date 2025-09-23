@@ -1,5 +1,6 @@
 import * as dUtils from "../databaseTools/databaseUtilities.js";
 
+// Button Palaa toimintoon valitsemalla - Return to the options page:
 document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("return-btn")
@@ -8,23 +9,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+//Behavior of the page depending on the admin's action:
 document.addEventListener("DOMContentLoaded", () => {
-  const unreadBtn = document.getElementById("unread-toggle");
-  const allBtn = document.getElementById("all-toggle");
-  const titleElement = document.getElementById("admin-container-title");
-  unreadBtn.addEventListener("click", toggleBtn);
-  allBtn.addEventListener("click", toggleBtn);
+  document
+    .getElementById("unread-toggle")
+    .addEventListener("click", async (event) => {
+      window.location.href = "admin-menu-read-message.php?filter=unread";
+    });
+});
 
-  function toggleBtn(event) {
-    unreadBtn.classList.remove("active-toggle");
-    allBtn.classList.remove("active-toggle");
-
-    event.currentTarget.classList.add("active-toggle");
-
-    if (event.currentTarget.id == "unread-toggle") {
-      titleElement.textContent = "Toiminto: Näe vain lukemattomat viestit";
-    } else {
-      titleElement.textContent = "Toiminto: Näe kaikki viestit";
-    }
-  }
+document.addEventListener("DOMContentLoaded", () => {
+  document
+    .getElementById("all-toggle")
+    .addEventListener("click", async (event) => {
+      window.location.href = "admin-menu-read-message.php?filter=all";
+    });
 });
