@@ -69,11 +69,10 @@ if (!isset($_SESSION['id'])) {
             <!-- Block to choose file -->
             <div class="admin-add-upload-img">
                 <label class="upload-img-button-label" for="img-file">Valitse tiedosto palvelimelle ladattavaksi:</label>
-                <input type="file" id="img-file" name="img-file" class="upload-img-button" oninput="checkFileType()">
+                <input type="file" id="img-file" name="img-file" class="upload-img-button">
                 <p class="upload-svg-info-text" id="upload-svg-info-text"></p>
             </div>
-            <button type="submit" id="submit-btn" class="admin-btn"
-                onclick="validateForm(event)">Lataa tietokantaan</button>
+            <button type="submit" id="submit-btn" class="admin-btn">Lataa tietokantaan</button>
 
         </form>
 
