@@ -1,9 +1,16 @@
 <?php
 session_start();
+include_once "sql_query.php";
 if (!isset($_SESSION['id'])) {
     header("Location: login.php");
     exit();
 }
+
+// $unread_messages = get_unread_messages();
+// $all_messages = get_all_messages();
+
+// $_SESSION["unread_messages"] = $unread_messages;
+// $_SESSION["all_messages"] = $all_messages;
 
 ?>
 
@@ -27,17 +34,23 @@ if (!isset($_SESSION['id'])) {
 
 <body>
     <?php include __DIR__ . '/header.php'; ?>
-    <button type="submit" id="return-btn" class="admin-btn top-admin-btn">Return to the action choose</button>
+    <button type="submit" id="return-btn" class="admin-btn top-admin-btn">Palaa toimintoon valitsemalla</button>
 
-    <!-- <section class="admin-container">
-        <h1 class="admin-container-title">Toiminto: lisää uusi artikkeli tietokantaan</h1>
-        
 
-        <form method="post" id="admin-add-article" class="add-form" enctype="multipart/form-data" action="upload-to-database.php">
 
-        </form>
+    <section class="admin-container">
+        <div class="toggle-btns">
+            <button class="message-toggle-item active-toggle" id="unread-toggle">Lukemattomat viestit</button>
+            <button class="message-toggle-item" id="all-toggle">Kaikki viestit</button>
+        </div>
+        <h1 class="admin-container-title" id="admin-container-title">Toiminto: Näe vain lukemattomat viestit</h1>
 
-    </section> -->
+
+        <!-- <form method="post" id="admin-add-article" class="add-form" enctype="multipart/form-data" action="upload-to-database.php">
+
+        </form> -->
+
+    </section>
 
     <script src="./js_php/admin-menu-read-message.js" type="module"></script>
 

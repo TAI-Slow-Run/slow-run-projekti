@@ -868,3 +868,27 @@ main {
   min-height: 20rem;
 }
 
+/* ADMIN PAGE: READ MESSAGES */
+.toggle-btns{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.message-toggle-item{
+  min-width: 8rem;
+  padding: 0.2rem;
+  font-size: 0.7rem;
+  background-color: #707070;
+  color: var(--main-color);
+  border: 1px solid rgb(69, 67, 67);
+  border-radius: 15px;
+}
+.message-toggle-item:hover{
+  background-color: #6e5e5e;
+}
+.active-toggle{
+  background-color: var(--accent-color);
+}
