@@ -27,7 +27,7 @@ if (!isset($_SESSION['id'])) {
 
 <body>
     <?php include __DIR__ . '/header.php'; ?>
-    <button type="submit" id="return-btn" class="admin-btn top-admin-btn">Return to the action choose</button>
+    <button type="submit" id="return-btn" class="admin-btn top-admin-btn">Palaa toimintoon valitsemalla</button>
 
     <section class="admin-container">
         <h1 class="admin-container-title">Toiminto: lisää uusi artikkeli tietokantaan</h1>
