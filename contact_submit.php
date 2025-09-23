@@ -9,8 +9,8 @@ if(anyNull(true, $data)) {
     exit();
 }
 
- $id = getLastId("users", "user_id") + 1;
- $sql_statement = "INSERT INTO users(name, email, city, message) VALUES (:name, :email, :city, :message)";
+ $id = getLastId("messages", "message_id") + 1;
+ $sql_statement = "INSERT INTO messages(name, email, city, message) VALUES (:name, :email, :city, :message)";
 
  try {
     $query = $connection->prepare($sql_statement);
