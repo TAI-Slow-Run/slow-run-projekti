@@ -26,7 +26,7 @@
       <!-- <img class="hero-media" src="./images/main-banner.jpg" alt="Slow running on ice" /> -->
       <div class="hero__inner">
         <h1 class="hero-title">Juokse hitaasti<br>niin voit paremmin.</h1>
-        <a href="#join" class="liity-btn">Liity mukaan</a><P></P>
+        <a href="./contact.php" class="liity-btn">Liity mukaan</a><P></P>
       </div>
     </section>
     <!-- MISTÄ ON KYSE -->

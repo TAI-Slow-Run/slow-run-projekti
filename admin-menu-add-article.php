@@ -4,7 +4,10 @@ if (!isset($_SESSION['id'])) {
     header("Location: login.php");
     exit();
 }
-
+echo "<pre>";
+print_r($_SESSION);
+echo "</pre>";
+// session_unset();
 ?>
 
 <!DOCTYPE html>

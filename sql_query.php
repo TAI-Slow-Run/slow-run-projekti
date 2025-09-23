@@ -12,10 +12,9 @@ function get_news()
 
     //Send request to the DB to the table news without any parameters
     // because we need to get all the records from the table:
-    $stmt = $conn->prepare("SELECT 
-                                news_id, title, publication_date, article_text 
-                            FROM 
-                                news;");
+    $stmt = $conn->prepare("SELECT news_id, title, publication_date, article_text 
+                            FROM news
+                            ORDER BY publication_date DESC;");
     $stmt->execute(); // Run the request
 
     // Take all the news that we just fetched and put it into an array:
@@ -76,4 +75,38 @@ function handleTempImgFile($fileName)
     }
 }
 
+function get_all_messages()
+{
+    global $conn;
+
+    //Send request to the DB to the table messages without any parameters
+    // because we need to get all the messages from the table:
+    $stmt = $conn->prepare("SELECT message_id, name, city, email, message, message_date, is_read 
+                            FROM  messages
+                            ORDER BY message_date DESC;");
+    $stmt->execute(); // Run the request
+
+    // Take all the messages that we just fetched and put it into an array:
+    $all_messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $all_messages;
+}
+
+function get_unread_messages()
+{
+    global $conn;
+
+    //Send request to the DB to the table messages and get only the records
+    // where the field is_read = false:
+    $stmt = $conn->prepare("SELECT message_id, name, city, email, message, message_date, is_read 
+                            FROM  messages
+                            WHERE is_read = 0
+                            ORDER BY message_date DESC;");
+    $stmt->execute(); // Run the request
+
+    // Take all the messages that we just fetched and put it into an array:
+    $all_messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $all_messages;
+}
 ?>
