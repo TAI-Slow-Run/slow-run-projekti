@@ -25,3 +25,14 @@ document.addEventListener("DOMContentLoaded", () => {
       window.location.href = "admin-menu-read-message.php?filter=all";
     });
 });
+//EventListener to the checkbox - to get index of the message:
+document.addEventListener("DOMContentLoaded", () => {
+    let checkboxes = document.querySelectorAll(".message-checkbox");
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener("click", async (event) => {
+            let checkboxValue = event.currentTarget.value;
+            // console.log(checkboxValue);
+        })
+    });
+
+})

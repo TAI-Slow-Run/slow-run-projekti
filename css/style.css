@@ -895,7 +895,9 @@ main {
 .top-wrapper {
   display: flex;
   flex-direction: row;
-  gap: 1.5rem;
+  gap: 1.6rem;
+  font-size: 0.7rem;
+  /* justify-content: space-around; */
 }
 .add-form .item-wrapper{
   display: flex;
@@ -905,4 +907,25 @@ main {
 }
 .bottom-wrapper{
   color: var(--main-font-color);  
+}
+.bottom-wrapper{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+.bottom-wrapper label{
+  width: 95%;
+  font-size: 0.8rem;
+}
+/* .data-field{
+  margin: 0 auto;
+} */
+.data-field::after{
+  content: '|';
+  padding-left: 0.9rem;
+}
+.data-field:last-child::after{
+  content: none;
 }
