@@ -27,12 +27,30 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 //EventListener to the checkbox - to get index of the message:
 document.addEventListener("DOMContentLoaded", () => {
-    let checkboxes = document.querySelectorAll(".message-checkbox");
-    checkboxes.forEach(checkbox => {
-        checkbox.addEventListener("click", async (event) => {
-            let checkboxValue = event.currentTarget.value;
-            // console.log(checkboxValue);
-        })
+  let checkboxes = document.querySelectorAll(".message-checkbox");
+  checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener("click", async (event) => {
+      let checkboxValue = event.currentTarget.value;
+      // console.log(checkboxValue);
     });
+  });
+});
 
-})
+//EventListener to the button Mark-as-read:
+document.addEventListener("DOMContentLoaded", () => {
+  document
+    .getElementById("mark-as-read")
+    .addEventListener("click", async (event) => {
+        event.preventDefault();
+      handleCheckboxValue();
+    });
+});
+
+function handleCheckboxValue() {
+  let checkboxes = document.querySelectorAll(".message-checkbox");
+  checkboxes.forEach((checkbox) => {
+    let checkboxValue = checkbox.value;
+    let checkboxChecked = checkbox.checked;
+    console.log(checkboxValue, checkboxChecked);
+  });
+}

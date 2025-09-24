@@ -38,6 +38,12 @@
   .top-wrapper{
     flex-wrap: wrap;
   }
+  .admin-btn{
+    padding: 8px 12px;
+  }
+  .btns-wrapper{
+    gap:1rem;
+  }
 }
 
 @media screen and (max-width: 450px) {
