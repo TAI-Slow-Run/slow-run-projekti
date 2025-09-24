@@ -80,60 +80,72 @@ unset($_SESSION["filter"]);
         $amountMessages = sizeof($messages);
         if ($filter === "all") {
         ?>
-            amountMessagesElement.textContent = `Tietokannassa on <?php echo $amountMessages;?> viestiä`;
+            amountMessagesElement.textContent = `Tietokannassa on <?php echo $amountMessages; ?> viestiä`;
             document.getElementById("all-toggle").classList.add("active-toggle");
             document.getElementById("admin-container-title").textContent = "Toiminto: Näe kaikki viestit";
         <?php
         } else {
         ?>
-            amountMessagesElement.textContent = `Tietokannassa on <?php echo $amountMessages;?> lukematonta viestiä`;
+            amountMessagesElement.textContent = `Tietokannassa on <?php echo $amountMessages; ?> lukematonta viestiä`;
             document.getElementById("unread-toggle").classList.add("active-toggle");
             document.getElementById("admin-container-title").textContent = "Toiminto: Näe vain lukemattomat viestit";
         <?php
         }
         //Scrip for making HTML markup inside POST-form:
-            foreach ($messages as $message) {
-                ?>
-                itemWrapper = document.createElement("div");
-                itemWrapper.classList.add("item-wrapper");
-
-                topWrapper = document.createElement("div");
-                topWrapper.classList.add("top-wrapper");
-
-                dateField = document.createElement("p");
-                dateField.classList.add("data-field");
-                dateField.textContent = "<?php echo $message["message_date"];?>";
-
-                nameField = document.createElement("p");
-                nameField.classList.add("data-field");
-                nameField.textContent = "<?php echo $message["name"];?>";
-
-                emailField = document.createElement("p");
-                emailField.classList.add("data-field");
-                emailField.textContent = "<?php echo $message["email"];?>";
-
-                cityField = document.createElement("p");
-                cityField.classList.add("data-field");
-                cityField.textContent = "<?php echo $message["city"];?>";
-
-                topWrapper.appendChild(dateField);
-                topWrapper.appendChild(nameField);
-                topWrapper.appendChild(emailField);
-                topWrapper.appendChild(cityField);
-                itemWrapper.appendChild(topWrapper);
-
-                bottomWrapper = document.createElement("p");
-                bottomWrapper.classList.add("bottom-wrapper");
-                bottomWrapper.id = "<?php echo $message["message_id"];?>";
-                bottomWrapper.textContent = "<?php echo $message["message"];?>";
-                itemWrapper.appendChild(bottomWrapper);
-
-                document.getElementById("admin-messages").appendChild(itemWrapper);
-                <?php
-            }
+        foreach ($messages as $message) {
         ?>
-        
+            itemWrapper = document.createElement("div");
+            itemWrapper.classList.add("item-wrapper");
 
+            topWrapper = document.createElement("div");
+            topWrapper.classList.add("top-wrapper");
+
+            dateField = document.createElement("p");
+            dateField.classList.add("data-field");
+            dateField.textContent = "<?php echo $message["message_date"]; ?>";
+
+            nameField = document.createElement("p");
+            nameField.classList.add("data-field");
+            nameField.textContent = "<?php echo $message["name"]; ?>";
+
+            emailField = document.createElement("p");
+            emailField.classList.add("data-field");
+            emailField.textContent = "<?php echo $message["email"]; ?>";
+
+            cityField = document.createElement("p");
+            cityField.classList.add("data-field");
+            cityField.textContent = "<?php echo $message["city"]; ?>";
+
+            topWrapper.appendChild(dateField);
+            topWrapper.appendChild(nameField);
+            topWrapper.appendChild(emailField);
+            topWrapper.appendChild(cityField);
+            itemWrapper.appendChild(topWrapper);
+
+            //div for message's text and checkbox for it:
+            bottomWrapper = document.createElement("div");
+            bottomWrapper.classList.add("bottom-wrapper");
+            //label for checkbox:
+            wrapperLabel = document.createElement("label");
+            wrapperLabel.setAttribute("for", "message<?php echo $message["message_id"]; ?>");
+            msg = <?php echo json_encode($message['message']); ?>;
+            wrapperLabel.textContent = msg;
+            bottomWrapper.appendChild(wrapperLabel);
+            //input checkbox:
+            wrapperInput = document.createElement("input");
+            wrapperInput.setAttribute("type", "checkbox");
+            wrapperInput.classList.add("message-checkbox");
+            wrapperInput.id = "<?php echo $message["message_id"]; ?>";
+            wrapperInput.value = "<?php echo $message["message_id"]; ?>";
+            wrapperInput.name = "message<?php echo $message["message_id"]; ?>"
+            bottomWrapper.appendChild(wrapperInput);
+
+            itemWrapper.appendChild(bottomWrapper);
+
+            document.getElementById("admin-messages").appendChild(itemWrapper);
+        <?php
+        }
+        ?>
     </script>
 
     <script src="./js_php/admin-menu-read-message.js" type="module"></script>
