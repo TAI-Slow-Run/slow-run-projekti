@@ -66,7 +66,7 @@ unset($_SESSION["filter"]);
         <p class="messages-amount" id="messages-amount"></p>
 
         <!-- This section fulfill by script in the end of the body -->
-        <form method="post" id="admin-messages" class="add-form" enctype="multipart/form-data">
+        <form method="post" id="admin-messages" class="add-form" enctype="multipart/form-data" action="message-manipulation.php">
 
         </form>
 
@@ -106,7 +106,8 @@ unset($_SESSION["filter"]);
 
             nameField = document.createElement("p");
             nameField.classList.add("data-field");
-            nameField.textContent = "<?php echo $message["name"]; ?>";
+            name = <?php echo json_encode($message["name"]); ?>;
+            nameField.textContent = name;
 
             emailField = document.createElement("p");
             emailField.classList.add("data-field");
@@ -146,6 +147,26 @@ unset($_SESSION["filter"]);
         <?php
         }
         ?>
+        //Block with buttons: "Merkitse luetuksi" and "Poista pysyvästi":
+        btnsWrapper = document.createElement("div");
+        btnsWrapper.classList.add("btns-wrapper");
+        //"Merkitse luetuksi":
+        markAsReadBtn = document.createElement("button");
+        markAsReadBtn.setAttribute("type", "submit");
+        markAsReadBtn.classList.add("admin-btn");
+        markAsReadBtn.id = "mark-as-read";
+        markAsReadBtn.textContent = "Merkitse luetuksi";
+        btnsWrapper.appendChild(markAsReadBtn);
+        //"Poista pysyvästi":
+        deleteMsgBtn = document.createElement("button");
+        deleteMsgBtn.setAttribute("type", "submit");
+        deleteMsgBtn.classList.add("admin-btn");
+        deleteMsgBtn.id = "delete-msg";
+        deleteMsgBtn.textContent = "Poista pysyvästi";
+        btnsWrapper.appendChild(deleteMsgBtn);
+
+        document.getElementById("admin-messages").appendChild(btnsWrapper);
+
     </script>
 
     <script src="./js_php/admin-menu-read-message.js" type="module"></script>

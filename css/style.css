@@ -929,3 +929,9 @@ main {
 .data-field:last-child::after{
   content: none;
 }
+.btns-wrapper{
+  display: flex;
+  flex-direction: row;
+  gap:3rem;
+  margin: 0 auto;
+}
