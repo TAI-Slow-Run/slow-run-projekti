@@ -11,10 +11,65 @@ if (!isset($_SESSION['id'])) {
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header("Location: admin-menu.php");
     exit;
-} elseif ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES["img-file"])) {
+} elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $messages = get_all_messages();
+    $action = json_decode($_POST["btnAction"], true);
+    $arrayOfCheckedItemIds = json_decode($_POST["checkedItemIds"], true);
     // echo '<pre>';
-    // var_dump($_POST);
+    // var_dump($arrayOfCheckedItemIds);
+    // var_dump($action);
+    // var_dump($messages);
     // echo '</pre>';
+}
+
+switch ($action) {
+    case 'mark-as-read':
+        $resultText = "Seuraavat viestit on merkitty luetuiksi:";
+
+        foreach ($arrayOfCheckedItemIds as $ItemId) {
+
+            foreach ($messages as $message) {
+                if ($message["message_id"] == $ItemId) {
+                    $name = $message['name'];
+                    $date = $message['message_date'];
+                    break;
+                }
+            }
+            $resultText .= "<br>" . $name . ", " . $date;
+            $stmt = $conn->prepare("UPDATE messages 
+                                    SET is_read = '1' 
+                                    WHERE message_id = :item_id;");
+            $stmt->bindParam(':item_id', $ItemId, PDO::PARAM_INT);
+            $stmt->execute();
+        }
+        break;
+
+    case 'delete-msg':
+        $resultText = "Tietokannasta on poistettu viesti, jonka lähettäjä on:";
+
+        foreach ($arrayOfCheckedItemIds as $ItemId) {
+
+            foreach ($messages as $message) {
+                if ($message["message_id"] == $ItemId) {
+                    $name = $message['name'];
+                    $date = $message['message_date'];
+                    break;
+                }
+            }
+            $resultText .= "<br>" . $name . ", " . $date;
+
+            $stmt = $conn->prepare("DELETE FROM messages
+                                    WHERE message_id = :item_id;");
+            $stmt->bindParam(':item_id', $ItemId, PDO::PARAM_INT);
+            $stmt->execute();
+        }
+        break;
+
+    default:
+        echo '<pre>';
+        var_dump("We don't know what to do");
+        echo '</pre>';
+        break;
 }
 
 ?>
@@ -47,6 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 <body>
     <?php include __DIR__ . '/header.php'; ?>
     <section class="action-container">
+        <p class="tesult-text"><?php echo $resultText; ?></p>
         <button type="submit" id="return-btn" class="admin-btn">Return to the action choose</button>
     </section>
 
