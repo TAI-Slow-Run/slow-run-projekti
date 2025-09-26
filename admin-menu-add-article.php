@@ -4,7 +4,10 @@ if (!isset($_SESSION['id'])) {
     header("Location: login.php");
     exit();
 }
-
+echo "<pre>";
+print_r($_SESSION);
+echo "</pre>";
+// session_unset();
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +30,7 @@ if (!isset($_SESSION['id'])) {
 
 <body>
     <?php include __DIR__ . '/header.php'; ?>
-    <button type="submit" id="return-btn" class="admin-btn top-admin-btn">Return to the action choose</button>
+    <button type="submit" id="return-btn" class="admin-btn top-admin-btn">Palaa toimintoon valitsemalla</button>
 
     <section class="admin-container">
         <h1 class="admin-container-title">Toiminto: lisää uusi artikkeli tietokantaan</h1>
@@ -69,11 +72,10 @@ if (!isset($_SESSION['id'])) {
             <!-- Block to choose file -->
             <div class="admin-add-upload-img">
                 <label class="upload-img-button-label" for="img-file">Valitse tiedosto palvelimelle ladattavaksi:</label>
-                <input type="file" id="img-file" name="img-file" class="upload-img-button" oninput="checkFileType()">
+                <input type="file" id="img-file" name="img-file" class="upload-img-button">
                 <p class="upload-svg-info-text" id="upload-svg-info-text"></p>
             </div>
-            <button type="submit" id="submit-btn" class="admin-btn"
-                onclick="validateForm(event)">Lataa tietokantaan</button>
+            <button type="submit" id="submit-btn" class="admin-btn">Lataa tietokantaan</button>
 
         </form>
 
