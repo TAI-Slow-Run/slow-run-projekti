@@ -67,6 +67,10 @@ unset($_SESSION["filter"]);
 
         <!-- This section fulfill by script in the end of the body -->
         <form method="post" id="admin-messages" class="add-form" enctype="multipart/form-data" action="message-manipulation.php">
+            <!-- Hidden input for getting array with ids for checked items and sending it to the php request -->
+        <input type="hidden" name="checkedItemIds" id="checkedItemIds">
+        <!-- Hidden input for getting info about button (delete or mark as read) and sending it to the php request  -->
+        <input type="hidden" name="btnAction" id="btnAction">
 
         </form>
 
@@ -167,6 +171,7 @@ unset($_SESSION["filter"]);
 
         document.getElementById("admin-messages").appendChild(btnsWrapper);
 
+        
     </script>
 
     <script src="./js_php/admin-menu-read-message.js" type="module"></script>

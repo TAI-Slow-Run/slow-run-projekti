@@ -935,3 +935,12 @@ main {
   gap:3rem;
   margin: 0 auto;
 }
+
+/* Page message-manipulation */
+.action-container .tesult-text{
+  color: var(--main-font-color);
+ line-height: 2rem;
+}
+.action-container .tesult-text::first-line{
+  font-weight: 700;
+}
