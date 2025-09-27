@@ -1,9 +1,15 @@
 <?php
-session_start();
+
+date_default_timezone_set('Europe/Helsinki');
+
+include("./databaseTools/connectionLibrary.php");
+include("./databaseTools/validationUtilities.php");
+
+$admin_id = validate_session($connection);
 
 include_once "sql_query.php";
 
-if (!isset($_SESSION['id'])) {
+if(!$admin_id) {
     header("Location: login.php");
     exit();
 }
