@@ -6,8 +6,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const fileInput = document.getElementById("img-file");
+  fileInput.addEventListener("input", checkFileType);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const submitBtn = document.getElementById("submit-btn");
+  submitBtn.addEventListener("click", validateForm);
+});
+
+
 function checkFileType() {
   let fileElement = document.getElementById("img-file");
+  console.log("Now in checkFileType");
   let fileToCheck = "";
   if ("files" in fileElement) {
     fileToCheck = fileElement.files[0]["type"];
