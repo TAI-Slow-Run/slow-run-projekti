@@ -1,0 +1,12 @@
+[27-Sep-2025 11:10:54 Europe/Helsinki] {"errno":2,"errstr":"Undefined global variable $_SESSION","errfile":"C:\\xampp\\htdocs\\admin-menu-add-article.php","errline":14}
+[27-Sep-2025 11:10:54 Europe/Helsinki] PHP Fatal error:  Uncaught Exception: {"errno":2,"errstr":"Undefined global variable $_SESSION","errfile":"C:\\xampp\\htdocs\\admin-menu-add-article.php","errline":14} in C:\xampp\htdocs\databaseTools\connectionLibrary.php:57
+Stack trace:
+#0 C:\xampp\htdocs\admin-menu-add-article.php(14): errorHandler(2, 'Undefined globa...', 'C:\\xampp\\htdocs...', 14)
+#1 {main}
+  thrown in C:\xampp\htdocs\databaseTools\connectionLibrary.php on line 57
+[27-Sep-2025 11:11:15 Europe/Helsinki] {"errno":2,"errstr":"Undefined global variable $_SESSION","errfile":"C:\\xampp\\htdocs\\admin-menu-add-article.php","errline":14}
+[27-Sep-2025 11:11:15 Europe/Helsinki] PHP Fatal error:  Uncaught Exception: {"errno":2,"errstr":"Undefined global variable $_SESSION","errfile":"C:\\xampp\\htdocs\\admin-menu-add-article.php","errline":14} in C:\xampp\htdocs\databaseTools\connectionLibrary.php:57
+Stack trace:
+#0 C:\xampp\htdocs\admin-menu-add-article.php(14): errorHandler(2, 'Undefined globa...', 'C:\\xampp\\htdocs...', 14)
+#1 {main}
+  thrown in C:\xampp\htdocs\databaseTools\connectionLibrary.php on line 57
