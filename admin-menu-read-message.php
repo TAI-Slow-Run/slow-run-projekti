@@ -9,7 +9,7 @@ $admin_id = validate_session($connection);
 
 include_once "sql_query.php";
 
-if(!$admin_id) {
+if (!$admin_id) {
     header("Location: login.php");
     exit();
 }
@@ -60,23 +60,29 @@ unset($_SESSION["filter"]);
     <button type="submit" id="return-btn" class="admin-btn top-admin-btn">Palaa toimintoon valitsemalla</button>
 
 
+    <section class="admin-container">
 
+        <h1 class="admin-container-title" id="admin-container-title">Toiminto: Näe vain lukemattomat viestit</h1>
+        <div class="admin-container-explanation">
+            <p>Tässä osiossa voi vaihtaa näkymää joko kaikkiin lukemattomiin viesteihin <strong>(Lukemattomat viestit)</strong> tai kaikkiin tietokantaan tallennettuihin viesteihin <strong>(Kaikki viestit)</strong>.</p>
+            <p>Valitsemalla viestejä (yhden tai useampia kerralla) ne voi joko merkitä luetuiksi tai poistaa tietokannasta pysyvästi.</p>
+            <p><strong>Poistettuja viestejä ei voi palauttaa.</strong></p>
+        </div>
+    </section>
     <section class="admin-container">
         <form action="" method="get" class="toggle-btns" id="toggle">
             <button type="submit" name="filter" value="unread" class="message-toggle-item" id="unread-toggle">Lukemattomat viestit</button>
             <button type="submit" name="filter" value="all" class="message-toggle-item" id="all-toggle">Kaikki viestit</button>
         </form>
 
-        <h1 class="admin-container-title" id="admin-container-title">Toiminto: Näe vain lukemattomat viestit</h1>
-        <p></p>
         <p class="messages-amount" id="messages-amount"></p>
 
         <!-- This section fulfill by script in the end of the body -->
         <form method="post" id="admin-messages" class="add-form" enctype="multipart/form-data" action="message-manipulation.php">
             <!-- Hidden input for getting array with ids for checked items and sending it to the php request -->
-        <input type="hidden" name="checkedItemIds" id="checkedItemIds">
-        <!-- Hidden input for getting info about button (delete or mark as read) and sending it to the php request  -->
-        <input type="hidden" name="btnAction" id="btnAction">
+            <input type="hidden" name="checkedItemIds" id="checkedItemIds">
+            <!-- Hidden input for getting info about button (delete or mark as read) and sending it to the php request  -->
+            <input type="hidden" name="btnAction" id="btnAction">
 
         </form>
 
@@ -90,13 +96,13 @@ unset($_SESSION["filter"]);
         $amountMessages = sizeof($messages);
         if ($filter === "all") {
         ?>
-            amountMessagesElement.textContent = `Tietokannassa on <?php echo $amountMessages; ?> viestiä`;
+            amountMessagesElement.innerHTML = `Tietokannassa on <strong><?php echo $amountMessages; ?></strong> viestiä`;
             document.getElementById("all-toggle").classList.add("active-toggle");
             document.getElementById("admin-container-title").textContent = "Toiminto: Näe kaikki viestit";
         <?php
         } else {
         ?>
-            amountMessagesElement.textContent = `Tietokannassa on <?php echo $amountMessages; ?> lukematonta viestiä`;
+            amountMessagesElement.innerHTML = `Tietokannassa on <strong><?php echo $amountMessages; ?></strong> lukematonta viestiä`;
             document.getElementById("unread-toggle").classList.add("active-toggle");
             document.getElementById("admin-container-title").textContent = "Toiminto: Näe vain lukemattomat viestit";
         <?php
@@ -176,8 +182,6 @@ unset($_SESSION["filter"]);
         btnsWrapper.appendChild(deleteMsgBtn);
 
         document.getElementById("admin-messages").appendChild(btnsWrapper);
-
-        
     </script>
 
     <script src="./js_php/admin-menu-read-message.js" type="module"></script>
