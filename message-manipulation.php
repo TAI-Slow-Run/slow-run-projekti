@@ -80,7 +80,7 @@ switch ($action) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Message manipulation was successful</title>
+    <title>Viestin manipulointi onnistui</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -103,7 +103,7 @@ switch ($action) {
     <?php include __DIR__ . '/header.php'; ?>
     <section class="action-container">
         <p class="tesult-text"><?php echo $resultText; ?></p>
-        <button type="submit" id="return-btn" class="admin-btn">Return to the action choose</button>
+        <button type="submit" id="return-btn" class="admin-btn">Palaa toimintoon valitsemalla</button>
     </section>
 
     <script src="./js_php/upload-to-database.js" type="module"></script>

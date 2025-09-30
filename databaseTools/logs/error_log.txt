@@ -10,3 +10,9 @@ Stack trace:
 #0 C:\xampp\htdocs\admin-menu-add-article.php(14): errorHandler(2, 'Undefined globa...', 'C:\\xampp\\htdocs...', 14)
 #1 {main}
   thrown in C:\xampp\htdocs\databaseTools\connectionLibrary.php on line 57
+[30-Sep-2025 16:41:28 Europe/Helsinki] {"errno":2,"errstr":"Undefined variable $target_dir","errfile":"C:\\xampp\\htdocs\\slow-run-projekti\\main-img-manipulation.php","errline":37}
+[30-Sep-2025 16:41:28 Europe/Helsinki] PHP Fatal error:  Uncaught Exception: {"errno":2,"errstr":"Undefined variable $target_dir","errfile":"C:\\xampp\\htdocs\\slow-run-projekti\\main-img-manipulation.php","errline":37} in C:\xampp\htdocs\slow-run-projekti\databaseTools\connectionLibrary.php:57
+Stack trace:
+#0 C:\xampp\htdocs\slow-run-projekti\main-img-manipulation.php(37): errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 37)
+#1 {main}
+  thrown in C:\xampp\htdocs\slow-run-projekti\databaseTools\connectionLibrary.php on line 57
