@@ -22,7 +22,7 @@ if(!$admin_id) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin page: add a new article to the data base</title>
+    <title>Ylläpitosivu: lisää uusi artikkeli tietokantaan</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/line.css">
@@ -78,7 +78,7 @@ if(!$admin_id) {
             <!-- Block to choose file -->
             <div class="admin-add-upload-img">
                 <label class="upload-img-button-label" for="img-file">Valitse tiedosto palvelimelle ladattavaksi:</label>
-                <input type="file" id="img-file" name="img-file" class="upload-img-button">
+                <input type="file" id="img-file" name="img-file" class="upload-img-button" accept="image/*">
                 <p class="upload-svg-info-text" id="upload-svg-info-text"></p>
             </div>
             <button type="submit" id="submit-btn" class="admin-btn">Lataa tietokantaan</button>
