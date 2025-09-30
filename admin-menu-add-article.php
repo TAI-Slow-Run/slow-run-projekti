@@ -78,7 +78,7 @@ if(!$admin_id) {
             <!-- Block to choose file -->
             <div class="admin-add-upload-img">
                 <label class="upload-img-button-label" for="img-file">Valitse tiedosto palvelimelle ladattavaksi:</label>
-                <input type="file" id="img-file" name="img-file" class="upload-img-button">
+                <input type="file" id="img-file" name="img-file" class="upload-img-button" accept="image/*">
                 <p class="upload-svg-info-text" id="upload-svg-info-text"></p>
             </div>
             <button type="submit" id="submit-btn" class="admin-btn">Lataa tietokantaan</button>
