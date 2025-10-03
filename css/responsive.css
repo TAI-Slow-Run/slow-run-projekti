@@ -35,14 +35,14 @@
     top: 0.7em;
     left: 70%;
   }
-  .top-wrapper{
+  .top-wrapper {
     flex-wrap: wrap;
   }
-  .admin-btn{
+  .admin-btn {
     padding: 8px 12px;
   }
-  .btns-wrapper{
-    gap:1rem;
+  .btns-wrapper {
+    gap: 1rem;
   }
 }
 
@@ -160,16 +160,24 @@
   }
 
   .prefooter-grid {
-    display: flex;
     flex-direction: column-reverse;
   }
 
   /* Map */
+  .form-panel,
   .map-panel {
+    width: 100%;
+  }
+  .form-panel{
+    padding: 3.5rem 0;
+  }
+  .map-panel {
+    /* display: block; */
+    /* position: relative; */
     min-height: 360px;
   }
 
-  .map-panel iframe {
+  /* .map-panel iframe {
     height: 360px;
   }
 
@@ -194,7 +202,7 @@
     width: 24px;
     height: 24px;
     font-size: 14px;
-  }
+  } */
 
   /* Contact page */
   @media (max-width: 768px) {

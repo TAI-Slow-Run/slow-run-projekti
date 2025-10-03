@@ -26,7 +26,8 @@
       <!-- <img class="hero-media" src="./images/main-banner.jpg" alt="Slow running on ice" /> -->
       <div class="hero__inner">
         <h1 class="hero-title">Juokse hitaasti<br>niin voit paremmin.</h1>
-        <a href="./contact.php" class="liity-btn">Liity mukaan</a><P></P>
+        <a href="./contact.php" class="liity-btn">Liity mukaan</a>
+        <P></P>
       </div>
     </section>
     <!-- MISTÄ ON KYSE -->
@@ -113,49 +114,94 @@
       </div>
     </section>
 
-  <section class="site-prefooter" role="contentinfo" aria-label="Contact section">
-  <div class="prefooter-grid">
-    <!-- LEFT: FORM -->
-    <section class="form-panel">
-      <h2 class="form-title">
-        Haluatko tietää<br>
-        toiminnastamme lisää?
-      </h2>
-      <!-- correct address required -->
-      <form id="contact-form" class="contact-form" method="post" autocomplete="on">
-        <label class="visually-hidden" for="name">Nimesi</label>
-        <input id="name" name="name" type="text" placeholder="Nimesi" required>
+    <section class="site-prefooter" role="contentinfo" aria-label="Contact section">
+      <div class="prefooter-grid">
+        <!-- LEFT: FORM -->
+        <section class="form-panel">
+          <h2 class="form-title">
+            Haluatko tietää<br>
+            toiminnastamme lisää?
+          </h2>
+          <!-- correct address required -->
+          <form id="contact-form" class="contact-form" method="post" autocomplete="on">
+            <label class="visually-hidden" for="name">Nimesi</label>
+            <input id="name" name="name" type="text" placeholder="Nimesi" required>
 
-        <label class="visually-hidden" for="email">Sähköpostisi</label>
-        <input id="email" name="email" type="email" placeholder="Sähköpostisi" required>
+            <label class="visually-hidden" for="email">Sähköpostisi</label>
+            <input id="email" name="email" type="email" placeholder="Sähköpostisi" required>
 
-        <label class="visually-hidden" for="city">Paikkakuntasi</label>
-        <input id="city" name="city" type="text" placeholder="Paikkakuntasi">
+            <label class="visually-hidden" for="city">Paikkakuntasi</label>
+            <input id="city" name="city" type="text" placeholder="Paikkakuntasi">
 
-        <label class="visually-hidden" for="message">Vapaa viesti meille..</label>
-        <textarea id="message" name="message" placeholder="Vapaa viesti meille.." rows="5"></textarea>
+            <label class="visually-hidden" for="message">Vapaa viesti meille..</label>
+            <textarea id="message" name="message" placeholder="Vapaa viesti meille.." rows="5"></textarea>
 
-        <button class="btn-submit" type="submit">Lähetä</button>
-      </form>
-    </section>
+            <button class="btn-submit" type="submit">Lähetä</button>
+          </form>
+        </section>
 
-    <!-- RIGHT: MAP -->
-    <section class="map-panel" aria-label="Map to Slow Run ry">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5985.925630124138!2d28.164575210428353!3d61.06016970166283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sfi!4v1758105478044!5m2!1sen!2sfi" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      <div class="map-badge">
-        <strong>SLOW RUN RY</strong>
-        <span>Rakuunamäki 11 C</span>
-        <span>50120 Lappeenranta</span>
+        <!-- RIGHT: MAP -->
+        <section class="map-panel" aria-label="Map to Slow Run ry">
+          <!-- Map using Google Maps API:  -->
+          <div id="map"></div>
+          <!-- <gmpx-store-locator map-id="DEMO_MAP_ID"></gmpx-store-locator> -->
+
+          <!-- Map using iframe: -->
+          <!-- <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5985.925630124138!2d28.164575210428353!3d61.06016970166283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sfi!4v1758105478044!5m2!1sen!2sfi"
+            width="100%" height="100%" style="border:0;"
+            allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          <div class="map-badge">
+            <strong>SLOW RUN RY</strong>
+            <span>Rakuunamäki 11 C</span>
+            <span>50120 Lappeenranta</span>
+          </div>
+
+          <div class="map-pin" aria-hidden="true">
+            <i class="uil uil-home"></i>
+          </div> -->
+        </section>
       </div>
-
-      <div class="map-pin" aria-hidden="true">
-        <i class="uil uil-home"></i>
-      </div>
     </section>
-  </div>
-</section>
   </main>
+
   <?php include __DIR__ . '/footer.php'; ?>
+
+  <script type="module" src="./js_php/index.js"></script>
+
+  <script>
+    (g => {
+      var h, a, k, p = "The Google Maps JavaScript API",
+        c = "google",
+        l = "importLibrary",
+        q = "__ib__",
+        m = document,
+        b = window;
+      b = b[c] || (b[c] = {});
+      var d = b.maps || (b.maps = {}),
+        r = new Set,
+        e = new URLSearchParams,
+        u = () => h || (h = new Promise(async (f, n) => {
+          await (a = m.createElement("script"));
+          e.set("libraries", [...r] + "");
+          for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]);
+          e.set("callback", c + ".maps." + q);
+          a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+          d[q] = f;
+          a.onerror = () => h = n(Error(p + " could not load."));
+          a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+          m.head.append(a)
+        }));
+      d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n))
+    })
+    ({
+      key: "REMOVED_KEY",
+      v: "weekly"
+    });
+  </script>
+
 </body>
 
 </html>

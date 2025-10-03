@@ -374,23 +374,37 @@ body {
   background: var(--main-color);
 }
 
-.prefooter-grid {
+/* .prefooter-grid {
   display: grid;
   grid-template-columns: 0.58fr 0.42fr;
   min-height: 620px;
+} */
+
+.prefooter-grid {
+  display: flex;
+  flex-direction: row;
+  /* gap: 1rem; */
+  min-height: 620px;
+  justify-content: space-between;
 }
 
 /* LEFT: form */
 .form-panel {
   background: var(--second-color);
-  padding: 44px 40px;
   display: flex;
   flex-direction: column;
+  width: calc(50%);
+  justify-content: center;
+  align-items: center;
+}
+.map-panel {
+  padding: 0;
+  width: 50%;
 }
 .form-title {
   font-family: var(--brand-font);
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.55;
   font-size: 28px;
   color: var(--main-color);
   margin: 8px 0 26px;
@@ -399,6 +413,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 75%;
   max-width: 420px;
 }
 .contact-form input,
@@ -423,7 +438,7 @@ body {
 .admin-btn {
   align-self: flex-start;
   margin-top: 8px;
-  background-color: #2e89a8;
+  background-color: var(--brand-color);
   color: var(--main-color);
   border-radius: 0.3rem;
   border: none;
@@ -439,13 +454,61 @@ body {
 }
 
 /* RIGHT: map */
-.map-panel {
+#map {
+  height: 100%;
+  width: 100%;
+}
+#content {
+  color: var(--accent-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+#bodyContent {
+  line-height: 1.7;
+}
+.gm-style-iw-chr {
+  display: none;
+}
+.gm-style-iw-d {
+  padding-top: 0.9rem;
+}
+.GMAMP-maps-pin-view {
+  font: 400 1rem var(--brand-font);
+}
+
+/* gmpx-store-locator {
+  width: 100%;
+  height: 100%;
+
+  /* These parameters customize the appearance of Locator Plus. See the documentation at
+     https://github.com/googlemaps/extended-component-library/blob/main/src/store_locator/README.md
+     for more information.
+  --gmpx-color-surface: #fff;
+  --gmpx-color-on-surface: #212121;
+  --gmpx-color-on-surface-variant: #757575;
+  --gmpx-color-primary: #1967d2;
+  --gmpx-color-outline: #e0e0e0;
+  --gmpx-fixed-panel-width-row-layout: 28.5em;
+  --gmpx-fixed-panel-height-column-layout: 65%;
+  --gmpx-font-family-base: "Roboto", sans-serif;
+  --gmpx-font-family-headings: "Roboto", sans-serif;
+  --gmpx-font-size-base: 0.875rem;
+  --gmpx-hours-color-open: #188038;
+  --gmpx-hours-color-closed: #d50000;
+  --gmpx-rating-color: #ffb300;
+  --gmpx-rating-color-empty: #e0e0e0;
+} */
+
+/* .map-panel {
   position: relative;
   overflow: hidden;
   min-height: 450px;
 }
 
 .map-panel iframe {
+  position: absolute;
   display: block;
   width: 100%;
   height: 100%;
@@ -495,7 +558,7 @@ body {
   color: var(--main-color);
   font-size: 28px;
   z-index: 2;
-}
+} */
 
 /* ===== FOOTER ===== */
 .site-footer {
@@ -899,62 +962,62 @@ main {
   font-size: 0.7rem;
   /* justify-content: space-around; */
 }
-.add-form .item-wrapper{
+.add-form .item-wrapper {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 0.7rem;
 }
-.bottom-wrapper{
-  color: var(--main-font-color);  
+.bottom-wrapper {
+  color: var(--main-font-color);
 }
-.bottom-wrapper{
+.bottom-wrapper {
   display: flex;
   flex-direction: row;
   gap: 1rem;
   align-items: flex-start;
   justify-content: space-evenly;
 }
-.bottom-wrapper label{
+.bottom-wrapper label {
   width: 95%;
   font-size: 0.8rem;
 }
 /* .data-field{
   margin: 0 auto;
 } */
-.data-field::after{
-  content: '|';
+.data-field::after {
+  content: "|";
   padding-left: 0.9rem;
 }
-.data-field:last-child::after{
+.data-field:last-child::after {
   content: none;
 }
-.btns-wrapper{
+.btns-wrapper {
   display: flex;
   flex-direction: row;
-  gap:3rem;
+  gap: 3rem;
   margin: 0 auto;
 }
 
 /* Page message-manipulation */
-.action-container .tesult-text{
+.action-container .tesult-text {
   color: var(--main-font-color);
- line-height: 2rem;
+  line-height: 2rem;
 }
-.action-container .tesult-text::first-line{
+.action-container .tesult-text::first-line {
   font-weight: 700;
 }
 
 /* Admin page Change main image HERO */
-#admin-change-main-img{
+#admin-change-main-img {
   gap: 2rem;
 }
-.admin-add-upload-img{
+.admin-add-upload-img {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-.admin-hero-image{
+.admin-hero-image {
   display: flex;
   flex-direction: column;
   gap: 1rem;
