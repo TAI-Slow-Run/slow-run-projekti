@@ -144,24 +144,7 @@
         <section class="map-panel" aria-label="Map to Slow Run ry">
           <!-- Map using Google Maps API:  -->
           <div id="map"></div>
-          <!-- <gmpx-store-locator map-id="DEMO_MAP_ID"></gmpx-store-locator> -->
 
-          <!-- Map using iframe: -->
-          <!-- <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5985.925630124138!2d28.164575210428353!3d61.06016970166283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sfi!4v1758105478044!5m2!1sen!2sfi"
-            width="100%" height="100%" style="border:0;"
-            allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-          <div class="map-badge">
-            <strong>SLOW RUN RY</strong>
-            <span>Rakuunamäki 11 C</span>
-            <span>50120 Lappeenranta</span>
-          </div>
-
-          <div class="map-pin" aria-hidden="true">
-            <i class="uil uil-home"></i>
-          </div> -->
         </section>
       </div>
     </section>

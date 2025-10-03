@@ -162,47 +162,28 @@
   .prefooter-grid {
     flex-direction: column-reverse;
   }
+  .form-title {
+    font-size: 1.2rem;
+  }
 
   /* Map */
   .form-panel,
   .map-panel {
     width: 100%;
   }
-  .form-panel{
+  .form-panel {
     padding: 3.5rem 0;
+    align-items: center;
   }
   .map-panel {
-    /* display: block; */
-    /* position: relative; */
-    min-height: 360px;
+    height: 500px;
   }
-
-  /* .map-panel iframe {
-    height: 360px;
+  .gm-style .gm-style-iw{
+    font-size: 0.6rem;
   }
-
-  .map-badge {
-    left: 65%;
-    top: 13%;
-    transform: translate(-50%, -50%);
-    padding: 6px 10px;
-    border-radius: 4px;
+  #content h1{
+    font-size: 0.9rem;
   }
-  .map-badge strong {
-    font-size: 12px;
-  }
-  .map-badge span {
-    font-size: 8px;
-  }
-
-  .map-pin {
-    left: 68%;
-    top: 25%;
-    transform: translate(-50%, -50%);
-    width: 24px;
-    height: 24px;
-    font-size: 14px;
-  } */
 
   /* Contact page */
   @media (max-width: 768px) {
