@@ -4,17 +4,21 @@ let map;
 async function initMap() {
     
   // The location of Uluru
-  const LOCATION = {
-    title: "SLOW RUN RY",
-    address: {
-      line1: "Rakuunamäki 11 C",
-      line2: "50120 Lappeenranta"
-    },
-    coords: {
-      lat: 61.063444549929194,
-      lng: 28.169665026226696
-    }
-  };
+  // const LOCATION = {
+  //   title: "SLOW RUN RY",
+  //   address: {
+  //     line1: "Rakuunamäki 11 C",
+  //     line2: "50120 Lappeenranta"
+  //   },
+  //   coords: {
+  //     lat: 61.063444549929194,
+  //     lng: 28.169665026226696
+  //   }
+  // };
+
+  const rawData = await fetch("./../.address.json");
+  const LOCATION = await rawData.json();
+  console.log(LOCATION);
 
   // Request needed libraries.
   //@ts-ignore
