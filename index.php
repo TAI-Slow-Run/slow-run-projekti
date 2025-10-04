@@ -180,7 +180,7 @@
       d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n))
     })
     ({
-      key: "REMOVED_KEY",
+      key: "",
       v: "weekly"
     });
   </script>
