@@ -16,3 +16,9 @@ Stack trace:
 #0 C:\xampp\htdocs\slow-run-projekti\main-img-manipulation.php(37): errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 37)
 #1 {main}
   thrown in C:\xampp\htdocs\slow-run-projekti\databaseTools\connectionLibrary.php on line 57
+[04-Oct-2025 17:35:49 Europe/Berlin] {"errno":2,"errstr":"Undefined array key \"API_KE\"","errfile":"C:\\xampp\\htdocs\\index.php","errline":187}
+[04-Oct-2025 17:35:49 Europe/Berlin] PHP Fatal error:  Uncaught Exception: {"errno":2,"errstr":"Undefined array key \"API_KE\"","errfile":"C:\\xampp\\htdocs\\index.php","errline":187} in C:\xampp\htdocs\databaseTools\connectionLibrary.php:57
+Stack trace:
+#0 C:\xampp\htdocs\index.php(187): errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 187)
+#1 {main}
+  thrown in C:\xampp\htdocs\databaseTools\connectionLibrary.php on line 57

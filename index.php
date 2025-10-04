@@ -1,3 +1,7 @@
+<?php
+include("./databaseTools/connectionLibrary.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -180,7 +184,7 @@
       d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n))
     })
     ({
-      key: "",
+      key: "<?php echo $_ENV["API_KEY"]?>",
       v: "weekly"
     });
   </script>
