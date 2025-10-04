@@ -14,7 +14,7 @@ $_SESSION["news"] = $news;
 // echo "<pre>";
 // print_r($_SESSION);
 // echo "</pre>";
-
+unset($_SESSION["news"]);
 ?>
 
 <!DOCTYPE html>

@@ -1,6 +1,12 @@
 <?php
-session_start();
-if (!isset($_SESSION['id'])) {
+
+date_default_timezone_set('Europe/Helsinki');
+
+include("./databaseTools/connectionLibrary.php");
+include("./databaseTools/validationUtilities.php");
+
+$admin_id = validate_session($connection);
+if(!$admin_id) {
     header("Location: login.php");
     exit();
 }
@@ -28,11 +34,11 @@ if (!isset($_SESSION['id'])) {
 <body>
     <?php include __DIR__ . '/header.php'; ?>
     <section class="action-container">
-        <p>Please, choose the action:</p>
-        <button type="submit" id="add-article" class="login-submit">Add a new article</button>
-        <button type="submit" id="read-message" class="login-submit">Read the messages</button>
-        <button type="submit" id="change-hero-img" class="login-submit">Change hero image on the index page</button>
-        <button type="submit" id="change-contact" class="login-submit">Change contacts and map</button>
+        <p>Valitse toiminto:</p>
+        <button type="submit" id="add-article" class="login-submit">Lisää uusi artikkeli</button>
+        <button type="submit" id="read-message" class="login-submit">Lue viestit</button>
+        <button type="submit" id="change-hero-img" class="login-submit">Vaihda pääkuvaa etusivulla</button>
+        <button type="submit" id="change-contact" class="login-submit">Vaihda yhteystietoja ja karttaa</button>
     </section>
 
     <script src="./js_php/admin-menu.js" type="module"></script>

@@ -35,6 +35,15 @@
     top: 0.7em;
     left: 70%;
   }
+  .top-wrapper {
+    flex-wrap: wrap;
+  }
+  .admin-btn {
+    padding: 8px 12px;
+  }
+  .btns-wrapper {
+    gap: 1rem;
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -151,40 +160,29 @@
   }
 
   .prefooter-grid {
-    display: flex;
     flex-direction: column-reverse;
+  }
+  .form-title {
+    font-size: 1.2rem;
   }
 
   /* Map */
+  .form-panel,
   .map-panel {
-    min-height: 360px;
+    width: 100%;
   }
-
-  .map-panel iframe {
-    height: 360px;
+  .form-panel {
+    padding: 3.5rem 0;
+    align-items: center;
   }
-
-  .map-badge {
-    left: 65%;
-    top: 13%;
-    transform: translate(-50%, -50%);
-    padding: 6px 10px;
-    border-radius: 4px;
+  .map-panel {
+    height: 500px;
   }
-  .map-badge strong {
-    font-size: 12px;
+  .gm-style .gm-style-iw{
+    font-size: 0.6rem;
   }
-  .map-badge span {
-    font-size: 8px;
-  }
-
-  .map-pin {
-    left: 68%;
-    top: 25%;
-    transform: translate(-50%, -50%);
-    width: 24px;
-    height: 24px;
-    font-size: 14px;
+  #content h1{
+    font-size: 0.9rem;
   }
 
   /* Contact page */
