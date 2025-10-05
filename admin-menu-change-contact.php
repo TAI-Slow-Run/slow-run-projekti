@@ -46,6 +46,11 @@ if(!$admin_id) {
             flex-direction: column;
             align-items: center;
         }
+
+        #exampleDIV {
+            border: 1px solid;
+            margin-top: 5px;
+        }
     </style>
 </head>
 
@@ -64,38 +69,43 @@ if(!$admin_id) {
     </section> -->
 
     <div id = "outerContainer">
-        <h1>Current map</h1>
+        <h1>Nykyinen kartta</h1>
         <div id = "map">
         <!-- Map is generated in the js file -->
         </div>
         <div>
             <form id = "formContainer">
                 <div>
-                    <label for = "address">New address: </label>
+                    <label for = "address">Osoitte: </label>
                     <input type = "text" name = "address" id = "address" required>
                 </div>
 
                 <div>
-                    <label for = "line1">Line 1: </label>
+                    <label for = "line1">Huoneisto ja numero: </label>
                     <input type = "text" name = "line1" id = "line1" required>
                 </div>
 
                 <div>
-                    <label for = "line2">Line 2: </label>
+                    <label for = "line2">Kaupunki ja postinumero: </label>
                     <input type = "text" name = "line2" id = "line2" required>
                 </div>
                 
                 <div>
-                    <input type = "submit" value = "Store new Address">
+                    <input type = "submit" value = "Tallenna uusi osoite" class="admin-btn">
                 </div>
             </form>
+            <div id = "exampleDIV">
+                <span class="admin-container-explanation">----Esimerkki----</span>
+                <span class="admin-container-explanation">Osoitte: Rakuunamäki</span>
+                <span class="admin-container-explanation">Huoneisto ja numero: C 11</span>
+                <span class="admin-container-explanation">Kaupunki ja postinumero: Lappeenranta 50120</span>
+            </div>
         </div>
     </div>
 
     <script src="./js_php/admin-menu-change-contact.js" type = "module"></script>
     
     <script
-        async
         defer
         src="https://maps.googleapis.com/maps/api/js?key=<?php echo $_ENV["API_KEY"]; ?>&callback=initMap">
     </script>
