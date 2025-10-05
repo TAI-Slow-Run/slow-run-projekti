@@ -74,6 +74,7 @@ if(!$admin_id) {
         <!-- Map is generated in the js file -->
         </div>
         <div>
+            <h2>Anna uusi osoite </h2>
             <form id = "formContainer">
                 <div>
                     <label for = "address">Osoitte: </label>
