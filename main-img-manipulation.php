@@ -2,7 +2,7 @@
 include_once "connection.php";
 include_once "sql_query.php";
 
-session_start();
+//session_start(); <-- I think it will work
 
 date_default_timezone_set('Europe/Helsinki');
 
