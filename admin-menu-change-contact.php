@@ -29,6 +29,24 @@ if(!$admin_id) {
         rel="stylesheet" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/responsive.css" />
+    <style>
+        #map {
+            width:600px;
+            height:450px;
+            margin-left: 5px;
+        }
+
+        #formContainer {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #outerContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -45,8 +63,42 @@ if(!$admin_id) {
 
     </section> -->
 
-    <script src="./js_php/admin-menu-read-message.js" type="module"></script>
+    <div id = "outerContainer">
+        <h1>Current map</h1>
+        <div id = "map">
+        <!-- Map is generated in the js file -->
+        </div>
+        <div>
+            <form id = "formContainer">
+                <div>
+                    <label for = "address">New address: </label>
+                    <input type = "text" name = "address" id = "address" required>
+                </div>
 
+                <div>
+                    <label for = "line1">Line 1: </label>
+                    <input type = "text" name = "line1" id = "line1" required>
+                </div>
+
+                <div>
+                    <label for = "line2">Line 2: </label>
+                    <input type = "text" name = "line2" id = "line2" required>
+                </div>
+                
+                <div>
+                    <input type = "submit" value = "Store new Address">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./js_php/admin-menu-change-contact.js" type = "module"></script>
+    
+    <script
+        async
+        defer
+        src="https://maps.googleapis.com/maps/api/js?key=<?php echo $_ENV["API_KEY"]; ?>&callback=initMap">
+    </script>
 </body>
 
 </html>

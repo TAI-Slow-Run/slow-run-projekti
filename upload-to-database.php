@@ -2,8 +2,14 @@
 include_once "connection.php";
 include_once "sql_query.php";
 
-session_start();
-if (!isset($_SESSION['id'])) {
+// session_start();
+// if (!isset($_SESSION['id'])) {
+//     header("Location: login.php");
+//     exit();
+// }
+
+$admin_id = validate_session($connection);
+if (!$admin_id) {
     header("Location: login.php");
     exit();
 }
