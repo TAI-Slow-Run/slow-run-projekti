@@ -940,3 +940,17 @@ main {
   flex-direction: column;
   gap: 1rem;
 }
+
+/* Admin page: change address */
+#formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 40%;
+}
+
+#exampleDIV {
+  border: 1px solid;
+  margin-top: 5px;
+  width: 40%;
+}

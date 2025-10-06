@@ -1,11 +1,11 @@
 {
-  "title": "SLOW RUN RY",
-  "address": {
-    "line1": "Rakuunamäki 11 C",
-    "line2": "50120 Lappeenranta"
-  },
-  "coords": {
-    "lat": 61.063444549929194,
-    "lng": 28.169665026226696
-  }
+    "title": "SLOW RUN RY",
+    "address": {
+        "line1": "Rakuunam\u00e4ki C 11",
+        "line2": "Lappeenranta 50120"
+    },
+    "coords": {
+        "lat": 61.0595624,
+        "lng": 28.1745186
+    }
 }
