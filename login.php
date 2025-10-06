@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login for admin</title>
+    <title>Kirjaudu sisään ylläpitäjänä</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,11 +20,11 @@
 <body>
     <?php include __DIR__ . '/header.php'; ?>
     <section class="login-container">
-        <p>Please, enter your login and password:</p>
+        <p>Anna käyttäjätunnuksesi ja salasanasi:</p>
         <form id="login-information" class="login-form">
             <input type="text" id="username" name="username" required>
             <input type="password" id="password" name="password" required>
-            <button type="submit" id="submitButton" class="login-submit">Submit</button>
+            <button type="submit" id="submitButton" class="login-submit">Lähetä</button>
         </form>
     </section>
 

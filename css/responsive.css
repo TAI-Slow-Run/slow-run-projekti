@@ -116,6 +116,11 @@
     height: auto;
     width: 100%;
   }
+  /* Admin page */
+  #formContainer,
+  #exampleDIV {
+    width: 100%;
+  }
   /* ANIMATION */
   .title-wrapper {
     gap: 0.5rem;
