@@ -2,6 +2,8 @@
 include_once "connection.php";
 include_once "sql_query.php";
 
+include("./databaseTools/validationUtilities.php");
+
 // session_start();
 // if (!isset($_SESSION['id'])) {
 //     header("Location: login.php");
