@@ -28,7 +28,7 @@ function create_session(PDO $connection, int $admin_id) {
     setcookie("auth_token", $cookie_value, [
         "expires" => 0, // session cookie (deleted when browser closes)
         "path" => "/", // cookie is sent for the whole website, not just a folder
-        "secure" => false, // cookie is only sent over HTTPS
+        "secure" => true, // cookie is only sent over HTTPS
         "httponly" => true, // cookie cannot be read or modified by JavaScript
         "samesite" => "Lax" // reduces CSRF by limiting cross-site cookie sending.
         /* CSRF = Cross-Site Request Forgery.
@@ -112,7 +112,7 @@ function logout_session(PDO $connection) {
         setcookie("auth_token", "", [
             "expires" => time() - 3600, // session cookie (deleted when browser closes)
             "path" => "/", // cookie is sent for the whole website, not just a folder
-            "secure" => false, // cookie is only sent over HTTPS
+            "secure" => true, // cookie is only sent over HTTPS
             "httponly" => true, // cookie cannot be read or modified by JavaScript
             "samesite" => "Lax" // reduces CSRF by limiting cross-site cookie sending.
             /* CSRF = Cross-Site Request Forgery.
