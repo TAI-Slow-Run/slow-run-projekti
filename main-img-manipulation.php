@@ -2,6 +2,8 @@
 include_once "connection.php";
 include_once "sql_query.php";
 
+include("./databaseTools/validationUtilities.php");
+
 //session_start(); <-- I think it will work
 
 date_default_timezone_set('Europe/Helsinki');
@@ -9,7 +11,7 @@ date_default_timezone_set('Europe/Helsinki');
 include("./databaseTools/connectionLibrary.php");
 include("./databaseTools/validationUtilities.php");
 
-$admin_id = validate_session($connection);
+$admin_id = validate_session($conn);
 if (!$admin_id) {
     header("Location: login.php");
     exit();
