@@ -10,7 +10,7 @@ include("./databaseTools/validationUtilities.php");
 //     exit();
 // }
 
-$admin_id = validate_session($connection);
+$admin_id = validate_session($conn);
 if (!$admin_id) {
     header("Location: login.php");
     exit();
