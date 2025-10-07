@@ -1,0 +1,3 @@
+This is a dummy file created to ensure the folder exists and is not empty. 
+It allows PHP scripts, like file upload handlers, to test or reference the folder 
+without causing errors if no real files have been uploaded yet.
