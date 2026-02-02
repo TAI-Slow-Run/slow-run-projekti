@@ -57,6 +57,19 @@ Recommended setup:
 The project is intended for local development and is not deployed online.
 
 ---
+### Homepage
+![Homepage](screenshots/home.png)
+
+### News page
+![News](screenshots/uutiset.png)
+
+### Contact form
+![Contact](screenshots/yhteys.png)
+
+### Mobile view
+![Mobile](screenshots/mobile.png)
+
+---
 
 ## Notes
 This repository represents an academic project created for learning purposes.
